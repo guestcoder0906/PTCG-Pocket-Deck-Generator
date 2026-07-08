@@ -79,6 +79,15 @@ const GeneratorPage = () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [checkingAuth, setCheckingAuth] = useState(true);
   const [excludedCards, setExcludedCards] = useState<string[]>([]);
+  const [searchStatus, setSearchStatus] = useState<string | null>(null);
+
+  // Poll progress in useEffect
+  React.useEffect(() => {
+    if (!loading) {
+      setSearchStatus(null);
+      return;
+    }
+  }, [loading]);
 
   // Advanced search filters state
   const [showFilters, setShowFilters] = useState(false);
@@ -138,11 +147,10 @@ const GeneratorPage = () => {
     }
   };
 
-  const { data: cards, isLoading: cardsLoading, error: cardsError } = useQuery({
+  const { data: cards } = useQuery({
     queryKey: ["cards"],
     queryFn: async () => {
       const response = await fetch(CARDS_URL);
-      if (!response.ok) throw new Error("Failed to fetch cards");
       return response.json() as Promise<CardType[]>;
     },
   });
@@ -169,8 +177,16 @@ const GeneratorPage = () => {
     setError(null);
     setResult(null);
 
+    const requestId = Math.random().toString(36).substring(7);
+
     try {
-      // Find matching meta decks from tournament data
+      // 1. Search
+      const searchRes = await fetch("/api/search-cards", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query: prompt, requestId })
+      });
+      const { cards: foundCards } = await searchRes.json();
       let matchedMetaDeck: any = null;
       let metaDeckListFormatted = "";
       if (decksData && Array.isArray(decksData)) {
@@ -798,11 +814,10 @@ A valid Pokemon TCG Pocket deck MUST have exactly 20 cards. CRITICAL RULE: A dec
               </div>
             )}
             
-            {cardsError && <div style={{ color: 'red', textAlign: 'center' }}>Error loading cards. Please refresh.</div>}
-            
-            <Button onClick={() => generateDeck()} disabled={loading || !prompt.trim() || cardsLoading || !!cardsError || !cards}>
-              {loading ? 'Generating...' : 'Generate Deck'}
+            <Button onClick={() => generateDeck()} disabled={loading || !prompt.trim() || !cards}>
+              {loading ? (searchStatus || 'Generating...') : 'Generate Deck'}
             </Button>
+            {loading && searchStatus && <p style={{ textAlign: 'center', marginTop: '0.5rem', color: 'var(--text-secondary)' }}>{searchStatus}</p>}
 
             {excludedCards.length > 0 && (
               <div style={{ marginTop: '1rem', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>

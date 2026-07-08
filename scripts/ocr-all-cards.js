@@ -218,7 +218,10 @@ const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 async function ocrWithSpace(base64Image) {
   const apiKey = process.env.OCR_SPACE_API_KEY;
-  if (!apiKey) throw new Error("OCR_SPACE_API_KEY is not defined");
+  if (!apiKey) {
+    console.warn("OCR_SPACE_API_KEY is not defined. Skipping OCR.Space.");
+    return null;
+  }
 
   const formData = new URLSearchParams();
   formData.append('apikey', apiKey);
@@ -295,13 +298,16 @@ async function runOcrPipeline() {
       // OCR.Space only
       let ocrText = "";
       try {
-        ocrText = await ocrWithSpace(base64);
-        console.log(`[OCR.Space] Successfully extracted raw text for ${card.id}`);
+        const result = await ocrWithSpace(base64);
+        if (result) {
+          ocrText = result;
+          console.log(`[OCR.Space] Successfully extracted raw text for ${card.id}`);
+        }
       } catch (err) {
         if (err.message.includes('429')) {
           console.log(`[Rate Limit] 429 hit. Waiting 65 seconds before retry...`);
           await delay(65000);
-          ocrText = await ocrWithSpace(base64);
+          ocrText = await ocrWithSpace(base64) || "";
         } else {
           throw err;
         }
