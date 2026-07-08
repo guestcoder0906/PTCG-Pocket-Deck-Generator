@@ -138,7 +138,7 @@ CRITICAL CARD KNOWLEDGE & ACCURACY INSTRUCTIONS:
   * Dratini is a Basic Pokemon (NOT Stage 1), and belongs to the Dragonite evolution line (Dratini -> Dragonair -> Dragonite).
   * Axew is a Basic Pokemon, Fraxure is Stage 1, and Haxorus is Stage 2. (Axew -> Fraxure -> Haxorus).
   * Munchlax is a Colorless Basic Pokemon with 50 HP and its own unique Pokepower/ability in TCG Pocket.
-  * Iris is a Supporter card from Mega Shine with a specific competitive effect. It does NOT boost general raw damage or draw cards generally; detail its EXACT competitive synergy.
+  * Misty is a Supporter card that flips coins to attach Water Energy to Water Pokemon, and Sabrina is a Supporter card that forces the opponent to switch their Active Pokemon.
   * Poke Ball is a Trainer card that searches for a Basic Pokemon.
   * Rare Candy is a Trainer card that allows you to evolve a Basic Pokemon directly to a Stage 2 Pokemon, which is a key speed engine for any Stage 2 deck.
 - Always write precise, correct statements in the card "details" fields.
@@ -159,7 +159,7 @@ CRITICAL EVOLUTIONARY LINE INTEGRITY RULES:
 - Ensure all Pokemon of an evolution line are accurately selected from the Available Cards List.
 
 CRITICAL DUPLICATE CARD NAME RULES:
-- Under NO circumstance should a card name appear more than twice (2 copies max) in the deck, even if they have different card IDs, different sets, or different art styles (e.g. you cannot have 2 copies of Iris from set A and 1 copy of Iris from set B. The absolute maximum total count of cards named "Iris" in the deck is 2).
+- Under NO circumstance should a card name appear more than twice (2 copies max) in the deck, even if they have different card IDs, different sets, or different art styles (e.g. you cannot have 2 copies of Poké Ball from set A and 1 copy of Poké Ball from set B. The absolute maximum total count of cards named "Poké Ball" in the deck is 2).
 - Ensure that you sum the 'count' fields of all cards with the SAME name to be at most 2.
 
 CRITICAL DECK-BUILDING PRINCIPLES:
