@@ -1,0 +1,10 @@
+{
+  "id": "a1-119",
+  "name": "Slowbro",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "STAGE\r\nlowbr\r\nSuper Psy Bolt\r\n0+20\r\n80\r\n"
+}

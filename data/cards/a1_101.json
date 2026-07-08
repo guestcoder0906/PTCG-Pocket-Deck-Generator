@@ -1,0 +1,10 @@
+{
+  "id": "a1-101",
+  "name": "Electabuzz",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Electabuzz\r\nBASIC\r\nThunder Punch\r\n40+\r\nFlip a coin. If heads. this attack does 40 more damage. If\r\ntails, this Pokémon also does 20 damage to itself.\r\n9+20\r\n"
+}

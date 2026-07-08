@@ -1,0 +1,10 @@
+{
+  "id": "a1-144",
+  "name": "Machoke",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Macho\r\nSTAGE\r\nStrength\r\n. +20\r\n00\r\nW1009\r\n5\r\n"
+}

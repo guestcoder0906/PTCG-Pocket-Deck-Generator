@@ -1,0 +1,10 @@
+{
+  "id": "a1-031",
+  "name": "Skiddo",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Skiddo\r\n9.\r\nSurprise Attack\r\nFlip a coin. If tails. this attack does nothing.\r\n8+20\r\n40\r\n"
+}

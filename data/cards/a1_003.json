@@ -1,0 +1,17 @@
+{
+  "id": "a1-003",
+  "name": "Venusaur",
+  "type": "Grass",
+  "subtype": null,
+  "health": "160",
+  "ability": null,
+  "attacks": [
+    {
+      "name": "Mega Drain",
+      "cost": "[G][G][C][C]",
+      "damage": "80",
+      "effect": "Heal 30 damage from this Pokémon."
+    }
+  ],
+  "rulesOrEffectText": ""
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Erika",
+  "type": "Trainer",
+  "subtype": "Supporter",
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Heal 50 damage from 1 of your Grass Pokémon.",
+  "id": "a4b-329"
+}

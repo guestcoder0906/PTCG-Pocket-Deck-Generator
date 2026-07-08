@@ -1,0 +1,10 @@
+{
+  "id": "a1-128",
+  "name": "Mewtwo",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "ewtwo\r\n* Power Blast\r\nDiscard 2 0 Energy from this Pokémon.\r\n0+20\r\nDNA\r\n120@\r\n120\r\n"
+}

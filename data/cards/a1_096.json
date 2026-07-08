@@ -1,0 +1,10 @@
+{
+  "id": "a1-096",
+  "name": "Pikachu ex",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "'Pikachu Q\r\nCircle Circuit\r\n30\r\nThis attack does 30 damage for each of your Benched\r\nPokémon.\r\n0000\r\n9+20\r\nout.\r\n"
+}

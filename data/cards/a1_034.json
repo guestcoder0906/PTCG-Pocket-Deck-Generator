@@ -1,0 +1,10 @@
+{
+  "id": "a1-034",
+  "name": "Charmeleon",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "STAGE\r\n00\r\nharmeleon\r\nFire Claws\r\n6+20\r\n"
+}

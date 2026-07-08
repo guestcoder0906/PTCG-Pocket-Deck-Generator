@@ -1,0 +1,10 @@
+{
+  "id": "a1-086",
+  "name": "Swanna",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Swanna\r\nSTAGE'\r\nWing Attack\r\n+20\r\n00\r\nHP90\r\n70\r\n"
+}

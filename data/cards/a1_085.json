@@ -1,0 +1,10 @@
+{
+  "id": "a1-085",
+  "name": "Ducklett",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Ducklett\r\nFlap\r\n+20\r\nHP50\r\n"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "a1-012",
+  "name": "Gloom",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Gloom\r\nSTAGE\r\nDrool\r\n8+20\r\n00\r\nHP800\r\n40\r\n"
+}

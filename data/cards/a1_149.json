@@ -1,0 +1,10 @@
+{
+  "id": "a1-149",
+  "name": "Golem",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "2 Golem\r\nVQ_ _ _ Gee _\r\n160\r\n* * Double-Edge\r\n150\r\nThis Pokémon also does 50 damage to itself.\r\n0+20\r\nthe\r\n"
+}

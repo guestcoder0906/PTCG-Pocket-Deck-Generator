@@ -1,0 +1,10 @@
+{
+  "id": "a1-136",
+  "name": "Golurk",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "olurk\r\ng TAGE\r\n* * Double Lariat\r\nFlip 2 coins. This attack does 100 damage for each heads\r\n0+20\r\n"
+}

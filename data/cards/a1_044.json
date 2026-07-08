@@ -1,0 +1,10 @@
+{
+  "id": "a1-044",
+  "name": "Magmar",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "agmar\r\nMagma Punch\r\n6+20\r\n"
+}

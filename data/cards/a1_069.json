@@ -1,0 +1,10 @@
+{
+  "id": "a1-069",
+  "name": "Kingler",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Kingler\r\nSTAGE\r\nw 120 e\r\n* KO Crab\r\n80+\r\nFlip 2 coins. If both of them are heads, this attack does\r\nmore damage.\r\n00\r\n"
+}

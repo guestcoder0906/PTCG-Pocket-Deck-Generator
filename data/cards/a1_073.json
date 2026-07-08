@@ -1,0 +1,10 @@
+{
+  "id": "a1-073",
+  "name": "Seaking",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Seakin\r\nSTAGE'\r\nHorn Hazard\r\nflip a coin. If tails. this attack does nothing.\r\n+20\r\n80\r\n"
+}

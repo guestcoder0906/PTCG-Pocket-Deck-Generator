@@ -1,0 +1,22 @@
+{
+  "name": "Venusaur ex",
+  "type": "Grass",
+  "subtype": null,
+  "health": "190",
+  "ability": null,
+  "attacks": [
+    {
+      "name": "Razor Leaf",
+      "cost": "[G][G][C]",
+      "damage": "60",
+      "effect": null
+    },
+    {
+      "name": "Giant Bloom",
+      "cost": "[G][G][C][C]",
+      "damage": "100",
+      "effect": "Heal 30 damage from this Pokémon."
+    }
+  ],
+  "rulesOrEffectText": "ex rule: When your Pokémon ex is Knocked Out, your opponent gets 2 Prize cards."
+}

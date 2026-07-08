@@ -1,0 +1,10 @@
+{
+  "id": "a1-122",
+  "name": "Gengar",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Gengar\r\nBother\r\n50\r\nYour opponent can't use any Supporter cards from their\r\nhand during their next turn.\r\n0+20\r\n"
+}

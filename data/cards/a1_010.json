@@ -1,0 +1,10 @@
+{
+  "id": "a1-010",
+  "name": "Beedrill",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "O\r\nooo\r\nBeedrill\r\nSharp Sting\r\n8+20\r\nw 1200\r\n70\r\n"
+}

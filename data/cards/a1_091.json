@@ -1,0 +1,10 @@
+{
+  "id": "a1-091",
+  "name": "Bruxish",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Bruxish\r\nSecond Strike\r\nIf your opponent's Active Pokémon has damage on it.\r\nis attack does 60 more damage\r\n+20\r\n00\r\n"
+}

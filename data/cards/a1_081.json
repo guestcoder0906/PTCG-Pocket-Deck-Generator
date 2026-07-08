@@ -1,0 +1,10 @@
+{
+  "id": "a1-081",
+  "name": "Omanyte",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Omanyte\r\nSTAGE\r\nWater Gun\r\n+20\r\n00\r\n40\r\n"
+}

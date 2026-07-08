@@ -1,0 +1,16 @@
+{
+  "name": "Paras",
+  "type": "Grass",
+  "subtype": null,
+  "health": "70",
+  "ability": null,
+  "attacks": [
+    {
+      "name": "Scratch",
+      "cost": "[G][C]",
+      "damage": "30",
+      "effect": null
+    }
+  ],
+  "rulesOrEffectText": ""
+}

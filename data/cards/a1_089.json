@@ -1,0 +1,10 @@
+{
+  "id": "a1-089",
+  "name": "Greninja",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "w 120 e\r\nWater Shuriken\r\nOnce during your turn, you may do 20 damage to I of\r\nyour opponent's Pokémon.\r\nMist Slash\r\n+20\r\n60\r\nooo\r\n"
+}

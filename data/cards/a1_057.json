@@ -1,0 +1,10 @@
+{
+  "id": "a1-057",
+  "name": "Psyduck",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Psyduck\r\nHeadache\r\nHP60@\r\n10\r\nYour can't use any Supporter cards from their\r\nhand during their next turn.\r\n+20\r\n"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "a1-046",
+  "name": "Moltres",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Moltres\r\nSky Attack\r\nFIOO@\r\n130\r\nHip a coin. If tails. this attack does nothing.\r\na, +20\r\nooo\r\n"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "a1-015",
+  "name": "Parasect",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Parasect\r\nSTAGE\r\nSlash\r\n8+20\r\n00\r\nw 120 0\r\n80\r\n"
+}

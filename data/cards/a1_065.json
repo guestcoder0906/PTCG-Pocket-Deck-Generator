@@ -1,0 +1,10 @@
+{
+  "id": "a1-065",
+  "name": "Dewgong",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "STAGE'\r\n00\r\nSurf\r\n+20\r\n"
+}

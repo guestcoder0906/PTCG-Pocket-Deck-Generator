@@ -1,0 +1,10 @@
+{
+  "id": "a1-094",
+  "name": "Pikachu",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Pikachu\r\nBASIC\r\nGnaw\r\nHP60\r\n20\r\n"
+}

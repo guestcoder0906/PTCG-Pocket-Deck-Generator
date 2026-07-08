@@ -1,0 +1,9 @@
+{
+  "name": "Hand Scope",
+  "type": "Trainer",
+  "subtype": "Item",
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Look at your opponent's hand."
+}

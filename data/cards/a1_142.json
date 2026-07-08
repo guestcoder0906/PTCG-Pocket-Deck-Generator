@@ -1,0 +1,10 @@
+{
+  "id": "a1-142",
+  "name": "Primeape",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Primeape=\r\nSTAGE\r\n4\r\nFight Back\r\nIfthis Pokémon has damage on it, this attack does\r\nore damage.\r\n. +20\r\n00\r\n"
+}

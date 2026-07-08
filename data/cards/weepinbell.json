@@ -1,0 +1,16 @@
+{
+  "name": "Weepinbell",
+  "type": "Grass",
+  "subtype": null,
+  "health": "90",
+  "ability": null,
+  "attacks": [
+    {
+      "name": "Razor Leaf",
+      "cost": "[G][C]",
+      "damage": "40",
+      "effect": null
+    }
+  ],
+  "rulesOrEffectText": "The leafy parts act as cutters for slashing foes. It spits a fluid that dissolves everything."
+}

@@ -1,0 +1,10 @@
+{
+  "id": "a1-111",
+  "name": "Heliolisk",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Heliolisk\r\n8) Quick Attack\r\n90 4)\r\n(3\r\n40+\r\nFlip a coin. If heads, this attack does 40 more damage.\r\n9+20\r\n0m Helio'\" with\r\n"
+}

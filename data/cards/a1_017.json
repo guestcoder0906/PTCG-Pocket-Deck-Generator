@@ -1,0 +1,10 @@
+{
+  "id": "a1-017",
+  "name": "Venomoth",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Venomoth\r\nSTAGE\r\nto\r\nO\r\nPoison Powder\r\n30\r\nYour opponent's Active Pokémon is now Poisoned.\r\n8+20\r\n00\r\nwings\r\n"
+}

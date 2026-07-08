@@ -1,0 +1,10 @@
+{
+  "id": "a1-024",
+  "name": "Tangela",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Tangela\r\nGAS 'C\r\nå_Su\r\nAbsorb\r\nHeal 10 damage from this Pokémon.\r\n8+20\r\n40\r\n"
+}

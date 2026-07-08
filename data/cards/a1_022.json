@@ -1,0 +1,10 @@
+{
+  "id": "a1-022",
+  "name": "Exeggutor",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Exeggutor\r\nStomp\r\nw 130 0\r\n30+\r\nFlip a coin. If heads, this attack does 30 more damage.\r\n8+20\r\nooo\r\n"
+}

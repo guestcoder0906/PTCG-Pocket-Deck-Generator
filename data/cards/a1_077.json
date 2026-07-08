@@ -1,0 +1,10 @@
+{
+  "id": "a1-077",
+  "name": "Magikarp",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Magikarp\r\nSplash\r\n+20\r\nHP30@\r\n10\r\n"
+}

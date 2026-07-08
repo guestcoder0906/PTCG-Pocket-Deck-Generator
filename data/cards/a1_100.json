@@ -1,0 +1,10 @@
+{
+  "id": "a1-100",
+  "name": "Electrode",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Electrode\r\nSTAGE\r\nElectro Ball\r\n00\r\n70\r\n"
+}

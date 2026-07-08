@@ -1,0 +1,10 @@
+{
+  "id": "a1-109",
+  "name": "Eelektross",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Eelektross\r\nw 140\r\n€ Thunder Fang\r\n80\r\nFlip a coin. If heads. your opponent's Active Pokémon is\r\nnow Paralyzed.\r\n9+20\r\nooo\r\n"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "a1-001",
+  "name": "Bulbasaur",
+  "type": "Grass",
+  "subtype": null,
+  "health": "70",
+  "ability": null,
+  "attacks": [
+    {
+      "name": "Vine Whip",
+      "cost": "[G][C]",
+      "damage": "40",
+      "effect": null
+    }
+  ],
+  "rulesOrEffectText": "There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger."
+}

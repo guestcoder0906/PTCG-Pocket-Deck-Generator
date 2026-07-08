@@ -1,0 +1,10 @@
+{
+  "id": "a1-083",
+  "name": "Articuno",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Articuno\r\nBASIC\r\n* -Ice Beam\r\n60\r\nFlip a coin. If heads. your opponent's Active Pokémon is\r\nnow Paralyzed.\r\n+20\r\nooo\r\n"
+}

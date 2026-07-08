@@ -1,0 +1,9 @@
+{
+  "name": "Koga",
+  "type": "Trainer",
+  "subtype": "Supporter",
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Put an Active Arbok or Weezing you have in play into your hand (all attached cards are returned to your hand)."
+}

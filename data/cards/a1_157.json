@@ -1,0 +1,10 @@
+{
+  "id": "a1-157",
+  "name": "Rhydon",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "STAGE\r\nRhydo\r\n* Horn Drill\r\n\"p 120 9\r\n0+20\r\n00\r\n"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "a1-120",
+  "name": "Gastly",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "astly\r\nSuffocating Gas\r\n0+20\r\n20\r\n"
+}

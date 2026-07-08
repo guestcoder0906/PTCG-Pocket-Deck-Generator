@@ -1,0 +1,10 @@
+{
+  "name": "Rare Candy",
+  "type": "Trainer",
+  "subtype": "Item",
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Choose 1 of your Basic Pokémon in play. If you have a Stage 2 Pokémon in your hand that evolves from that Pokémon, evolve it directly into that Stage 2 Pokémon (skipping the Stage 1 evolution).",
+  "id": "a4b-314"
+}

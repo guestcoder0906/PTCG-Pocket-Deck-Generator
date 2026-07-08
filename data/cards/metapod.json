@@ -1,0 +1,16 @@
+{
+  "name": "Metapod",
+  "type": "Grass",
+  "subtype": null,
+  "health": "80",
+  "ability": null,
+  "attacks": [
+    {
+      "name": "Bug Bite",
+      "cost": "[C][C]",
+      "damage": "30",
+      "effect": null
+    }
+  ],
+  "rulesOrEffectText": ""
+}

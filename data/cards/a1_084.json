@@ -1,0 +1,10 @@
+{
+  "id": "a1-084",
+  "name": "Articuno ex",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Articuno\r\nBASIC\r\nIce Wing\r\nBlizzard\r\n80\r\nThis attack also does 10 damage to each of your\r\nopponent's Benched Pokémon.\r\n+20\r\n"
+}

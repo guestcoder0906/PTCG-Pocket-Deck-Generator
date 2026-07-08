@@ -1,0 +1,10 @@
+{
+  "id": "a1-121",
+  "name": "Haunter",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "aunte\r\nWill-O-Wisp\r\n0+20\r\n30\r\n"
+}

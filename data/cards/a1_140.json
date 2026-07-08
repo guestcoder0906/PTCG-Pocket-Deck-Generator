@@ -1,0 +1,10 @@
+{
+  "id": "a1-140",
+  "name": "Dugtrio",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Dugtrio\r\nSTAGE\r\nDig\r\n40\r\nFlip a coin. If heads. during your opponent's next turn\r\nrevent all damage from—and effects of—attacks don\r\nto this Pokémon.\r\n0+20\r\n00\r\n"
+}

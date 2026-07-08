@@ -1,0 +1,10 @@
+{
+  "id": "a1-127",
+  "name": "Jynx",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Psychic\r\nThis attack does 20 more damage for each Ene\r\nached to your opponent's Active Pokémon.\r\n"
+}

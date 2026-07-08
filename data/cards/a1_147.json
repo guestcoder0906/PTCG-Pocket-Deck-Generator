@@ -1,0 +1,10 @@
+{
+  "id": "a1-147",
+  "name": "Geodude",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Tackle\r\n0+20\r\n2\r\n"
+}

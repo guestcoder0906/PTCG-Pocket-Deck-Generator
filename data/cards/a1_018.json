@@ -1,0 +1,10 @@
+{
+  "id": "a1-018",
+  "name": "Bellsprout",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Bellsprout\r\nVine Whip\r\n8+20\r\nHP600\r\n20\r\n"
+}

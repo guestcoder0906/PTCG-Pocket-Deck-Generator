@@ -1,0 +1,10 @@
+{
+  "id": "a1-061",
+  "name": "Poliwrath",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Poliwrathu,\r\nsrAGE21\r\nw150@\r\nCounterattack\r\nIf this Pokémon is in the Active Spot and is damaged by\r\nan attack from your opponent's Pokémon. do 20\r\ndamage to the Attacking Pokémon.\r\n80\r\nooo\r\nMega Punch\r\n+20\r\nred\r\n"
+}

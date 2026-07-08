@@ -1,0 +1,10 @@
+{
+  "name": "Misty",
+  "type": "Trainer",
+  "subtype": "Supporter",
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Choose 1 of your Benched or Active Water Pokémon. Flip a coin until you get tails. For each heads, attach 1 Water Energy from your Energy Zone to that Pokémon.",
+  "id": "a1-267"
+}

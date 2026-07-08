@@ -1,0 +1,10 @@
+{
+  "id": "a1-080",
+  "name": "Vaporeon",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Vaporeon\r\n* Bubble Drain\r\nHeal 30 damage from this Pokémon.\r\n000\r\nHp1306\r\n60\r\n"
+}

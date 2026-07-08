@@ -1,0 +1,10 @@
+{
+  "name": "Giovanni",
+  "type": "Trainer",
+  "subtype": "Supporter",
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "During this turn, your Pokémon's attacks deal +10 damage to your opponent's Active Pokémon.",
+  "id": "a1-223"
+}

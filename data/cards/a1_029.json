@@ -1,0 +1,10 @@
+{
+  "id": "a1-029",
+  "name": "Petilil",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "O\r\nPetilil\r\nBlot\r\n10\r\nHeal 10 damage from this Pokémon.\r\n"
+}

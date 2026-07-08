@@ -1,0 +1,16 @@
+{
+  "name": "Kakuna",
+  "type": "Grass",
+  "subtype": null,
+  "health": "80",
+  "ability": null,
+  "attacks": [
+    {
+      "name": "Bug Bite",
+      "cost": "[G]",
+      "damage": "30",
+      "effect": ""
+    }
+  ],
+  "rulesOrEffectText": "Almost incapable of moving, this Pokémon can only harden its shell to protect itself when it is in danger."
+}

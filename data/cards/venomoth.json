@@ -1,0 +1,16 @@
+{
+  "name": "Venomoth",
+  "type": "Grass",
+  "subtype": null,
+  "health": "80",
+  "ability": null,
+  "attacks": [
+    {
+      "name": "Poison Powder",
+      "cost": "[G]",
+      "damage": "30",
+      "effect": "Your opponent's Active Pokémon is now Poisoned."
+    }
+  ],
+  "rulesOrEffectText": "The wings are covered with dustlike scales. Every time it flaps its wings, it looses highly toxic dust."
+}

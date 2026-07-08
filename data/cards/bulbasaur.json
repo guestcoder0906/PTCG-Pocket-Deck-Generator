@@ -1,0 +1,16 @@
+{
+  "name": "Bulbasaur",
+  "type": "Pokemon",
+  "subtype": "Basic",
+  "health": "70",
+  "ability": null,
+  "attacks": [
+    {
+      "name": "Vine Whip",
+      "cost": "[G][C]",
+      "damage": "40",
+      "effect": null
+    }
+  ],
+  "rulesOrEffectText": ""
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Blaine",
+  "type": "Trainer",
+  "subtype": "Supporter",
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "During this turn, attacks from your Ninetales, Rapidash, or Magmar deal +30 damage to your opponent's Active Pokémon."
+}

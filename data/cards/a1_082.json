@@ -1,0 +1,10 @@
+{
+  "id": "a1-082",
+  "name": "Omastar",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Omastar\r\nw 140 e\r\n10\r\n* Ancient Whirlpool\r\n70\r\nDuring your opponent's next turn. the Defending\r\nPokémon can •t attack.\r\n+20\r\nooo\r\n"
+}

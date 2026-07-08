@@ -1,0 +1,9 @@
+{
+  "name": "Potion",
+  "type": "Trainer",
+  "subtype": "Item",
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Heal 20 damage from 1 of your Pokémon."
+}

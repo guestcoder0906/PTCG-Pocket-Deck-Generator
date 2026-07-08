@@ -1,0 +1,10 @@
+{
+  "id": "a1-125",
+  "name": "Hypno",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "g TAGE\r\nypno\r\nWIOO@\r\nOnce during your turn, you may flip a coin. If heads,\r\nyour opponent's Active Pokémon is now Asleep.\r\n* Psypunch\r\n0+20\r\n50\r\n"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Brock",
+  "type": "Trainer",
+  "subtype": "Supporter",
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Attach 1 Fighting Energy from your Energy Zone to 1 of your Benched Onix or Golem.",
+  "id": "a1-224"
+}

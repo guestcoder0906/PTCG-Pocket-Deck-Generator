@@ -1,0 +1,16 @@
+{
+  "name": "Caterpie",
+  "type": "Grass",
+  "subtype": null,
+  "health": "50",
+  "ability": null,
+  "attacks": [
+    {
+      "name": "Find a Friend",
+      "cost": "[C]",
+      "damage": null,
+      "effect": "Put 1 random Grass Pokémon from your deck into your hand."
+    }
+  ],
+  "rulesOrEffectText": "For protection, it releases a horrible stench from the antenna on its head to drive away enemies."
+}

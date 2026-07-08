@@ -1,0 +1,10 @@
+{
+  "id": "a1-063",
+  "name": "Tentacruel",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Tentacruel\r\nSTAGE\r\nPoison Tentacles\r\n50\r\nNour Opponent'S Active Pokémon is now Poisoned.\r\n+20\r\n00\r\n"
+}

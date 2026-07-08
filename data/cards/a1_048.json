@@ -1,0 +1,10 @@
+{
+  "id": "a1-048",
+  "name": "Heatmor",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "eatmor\r\nCombustion\r\ne +20\r\n"
+}

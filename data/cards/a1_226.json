@@ -1,0 +1,10 @@
+{
+  "name": "Lt. Surge",
+  "type": "Trainer",
+  "subtype": "Supporter",
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Move all Lightning Energy from your Benched Voltorb, Electrode, Pikachu, Pikachu ex, Magnemite, or Magneton to your Active Pikachu or Pikachu ex.",
+  "id": "a1-226"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "a1-153",
+  "name": "Marowak ex",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Marow\r\nBonemerang\r\n- Flip 2 coins. This attack does 80 damage for each heads.\r\n0+20\r\n0000\r\nout. op\r\n"
+}

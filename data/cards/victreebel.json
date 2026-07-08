@@ -1,0 +1,19 @@
+{
+  "name": "Victreebel",
+  "type": "Grass",
+  "subtype": null,
+  "health": "140",
+  "ability": {
+    "name": "Fragrance Trap",
+    "effect": "If this Pokémon is in the Active Spot, once during your turn, you may switch in 1 of your opponent's Benched Basic Pokémon to the Active Spot."
+  },
+  "attacks": [
+    {
+      "name": "Vine Whip",
+      "cost": "[G][C]",
+      "damage": "60",
+      "effect": null
+    }
+  ],
+  "rulesOrEffectText": ""
+}

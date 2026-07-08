@@ -1,0 +1,8 @@
+{
+  "name": "Pokémon TCG Pocket Deck Builder",
+  "description": "An advanced deck builder and generator for Pokémon TCG Pocket utilizing real card data and tournament-winning meta structures.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

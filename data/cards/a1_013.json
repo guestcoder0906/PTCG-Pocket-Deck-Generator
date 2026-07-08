@@ -1,0 +1,10 @@
+{
+  "id": "a1-013",
+  "name": "Vileplume",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "2 Vileplume\r\nw 140 0\r\nO O * Soothing Scent\r\n80\r\nYour opponent's Active Pokémon is now Asleep.\r\n8+20\r\nIt Wth\r\n"
+}

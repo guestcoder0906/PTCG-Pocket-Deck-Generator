@@ -1,0 +1,10 @@
+{
+  "id": "a1-078",
+  "name": "Gyarados",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Gyarados\r\ng TAGE\r\n4) Hyper Beam\r\n100\r\nDiscard a random Energy from your opponent's Active\r\nPokémon.\r\n+20\r\nooo\r\n"
+}

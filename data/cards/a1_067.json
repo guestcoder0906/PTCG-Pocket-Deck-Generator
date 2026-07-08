@@ -1,0 +1,10 @@
+{
+  "id": "a1-067",
+  "name": "Cloyster",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "STAGE\r\nCloyster\r\nShell Armor\r\nThis Pokémon takes —10 damage from attacks.\r\nSurf\r\n+20\r\n00\r\n70\r\n"
+}

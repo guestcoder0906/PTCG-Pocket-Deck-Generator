@@ -1,0 +1,9 @@
+{
+  "name": "Red Card",
+  "type": "Trainer",
+  "subtype": "Item",
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Your opponent shuffles their hand into their deck and draws 3 cards."
+}

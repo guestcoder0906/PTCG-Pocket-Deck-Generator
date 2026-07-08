@@ -1,0 +1,9 @@
+{
+  "name": "X Speed",
+  "type": "Trainer",
+  "subtype": "Item",
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "During this turn, the Retreat Cost of your Active Pokémon is [C] less."
+}

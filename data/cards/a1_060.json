@@ -1,0 +1,10 @@
+{
+  "id": "a1-060",
+  "name": "Poliwhirl",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Poliwhirl\r\nSTAGE\r\nKnuckle Punch\r\n+20\r\n00\r\nHP90\r\n40\r\n"
+}

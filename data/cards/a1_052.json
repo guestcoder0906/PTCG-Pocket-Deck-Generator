@@ -1,0 +1,10 @@
+{
+  "id": "a1-052",
+  "name": "Centiskorch",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "STAGE\r\nentiskorch\r\n* Fire Blast\r\n13\r\nScard a Energy from this Pokémon.\r\n4+20\r\n00\r\n"
+}

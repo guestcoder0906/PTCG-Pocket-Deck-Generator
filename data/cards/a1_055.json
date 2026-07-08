@@ -1,0 +1,10 @@
+{
+  "id": "a1-055",
+  "name": "Blastoise",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "E 'Blastoise\r\n80+\r\n* Hydro Pump\r\nIf this Pokémon has at least 2 extra Energy attached.\r\nthis attack does 60 more damage.\r\n+20\r\nooo\r\n"
+}

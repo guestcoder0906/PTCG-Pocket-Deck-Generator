@@ -1,0 +1,10 @@
+{
+  "id": "a1-093",
+  "name": "Frosmoth",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Frosmoth\r\nSTAGE\r\nPowder Snow\r\nYour opponent's Active Pokémon is now Asleep.\r\n00\r\n"
+}

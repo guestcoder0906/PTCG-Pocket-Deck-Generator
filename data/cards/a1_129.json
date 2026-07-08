@@ -1,0 +1,10 @@
+{
+  "id": "a1-129",
+  "name": "Mewtwo ex",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Mewtwo\r\nPsychic Sphere\r\n* * Psydrive\r\nDiscard 2 0 Energy from this Pokémon.\r\n0+20\r\n444',\r\nout,\r\n50\r\n150\r\n"
+}

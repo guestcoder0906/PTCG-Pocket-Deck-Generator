@@ -1,0 +1,10 @@
+{
+  "id": "a1-026",
+  "name": "Pinsir",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Pinsir\r\ngAS'C\r\nO Double Horn\r\nHP90\r\nFlip 2 coins. This attack does 50 damage for each heads.\r\n8+20\r\n00\r\n"
+}

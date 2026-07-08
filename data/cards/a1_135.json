@@ -1,0 +1,10 @@
+{
+  "id": "a1-135",
+  "name": "Golett",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "olett\r\nMega Punch\r\n0+20\r\n50\r\n"
+}

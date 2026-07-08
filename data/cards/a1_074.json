@@ -1,0 +1,10 @@
+{
+  "id": "a1-074",
+  "name": "Staryu",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Staryu\r\nSmack\r\n+20\r\nHP50\r\n20\r\n"
+}

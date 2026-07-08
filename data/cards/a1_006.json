@@ -1,0 +1,10 @@
+{
+  "id": "a1-006",
+  "name": "Metapod",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Metapod\r\nSTAGE\r\nBug Bite\r\n8+20\r\nHP80\r\n30\r\n"
+}

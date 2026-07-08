@@ -1,0 +1,9 @@
+{
+  "name": "Kanto Friends",
+  "type": "Trainer",
+  "subtype": "Supporter",
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Search your deck for a Bulbasaur, Charmander, or Squirtle, reveal it, and put it into your hand. Then, shuffle your deck."
+}

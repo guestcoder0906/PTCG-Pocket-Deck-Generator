@@ -1,0 +1,16 @@
+{
+  "name": "Tangela",
+  "type": "Grass",
+  "subtype": null,
+  "health": "80",
+  "ability": null,
+  "attacks": [
+    {
+      "name": "Absorb",
+      "cost": "Grass, Colorless",
+      "damage": "40",
+      "effect": "Heal 10 damage from this Pokémon."
+    }
+  ],
+  "rulesOrEffectText": ""
+}

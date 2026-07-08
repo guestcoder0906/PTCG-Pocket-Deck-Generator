@@ -1,0 +1,9 @@
+{
+  "name": "Professor's Research",
+  "type": "Trainer",
+  "subtype": "Supporter",
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Draw 2 cards."
+}

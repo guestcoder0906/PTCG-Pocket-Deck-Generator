@@ -1,0 +1,10 @@
+{
+  "id": "a1-117",
+  "name": "Alakazam",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "@ Psychic\r\n60+\r\nThis attack does 30 more damage for each Energy\r\nached to your opponent's Active Pokémon.\r\n9+20\r\n"
+}

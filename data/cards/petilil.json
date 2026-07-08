@@ -1,0 +1,16 @@
+{
+  "name": "Petilil",
+  "type": "Grass",
+  "subtype": null,
+  "health": "60",
+  "ability": null,
+  "attacks": [
+    {
+      "name": "Blot",
+      "cost": "[G]",
+      "damage": "10",
+      "effect": "Heal 10 damage from this Pokémon."
+    }
+  ],
+  "rulesOrEffectText": ""
+}

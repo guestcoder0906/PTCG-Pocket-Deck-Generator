@@ -1,0 +1,16 @@
+{
+  "name": "Ivysaur",
+  "type": "Grass",
+  "subtype": "Stage 1",
+  "health": "90",
+  "ability": null,
+  "attacks": [
+    {
+      "name": "Razor Leaf",
+      "cost": "[G][C][C]",
+      "damage": "60",
+      "effect": null
+    }
+  ],
+  "rulesOrEffectText": "NO. 002 Seed Pokémon HT: 3'3\" WT: 28.7 lbs.\nWhen the bulb on its back grows large, it appears to lose the ability to stand on its hind legs."
+}

@@ -1,0 +1,10 @@
+{
+  "id": "a1-030",
+  "name": "Lilligant",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Lilligant\r\nSTAGE\r\nO Leaf Supply\r\nw 1000\r\n50\r\nTake a O Energy from your Energy Zone and attach to\r\nI Of your Benched Ö Pokémon.\r\n8+20\r\n00\r\n"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Lisia",
+  "type": "Trainer",
+  "subtype": "Supporter",
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Search your deck for up to 2 Basic Lightning-type Pokémon with 50 HP or less, reveal them, and put them into your hand. Then, shuffle your deck."
+}

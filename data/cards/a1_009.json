@@ -1,0 +1,10 @@
+{
+  "id": "a1-009",
+  "name": "Kakuna",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Kakuna\r\nSTAGE\r\nO\r\nHP80\r\n30\r\nBug Bite\r\n8+20\r\n"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "a1-143",
+  "name": "Machop",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Machop\r\nKnuckle Punch\r\n. +20\r\n2\r\n"
+}

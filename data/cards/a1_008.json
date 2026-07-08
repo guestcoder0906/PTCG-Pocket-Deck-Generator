@@ -1,0 +1,10 @@
+{
+  "id": "a1-008",
+  "name": "Weedle",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "O\r\nWeedle\r\nNO\r\nSting\r\n8+20\r\nHP500\r\n20\r\n"
+}

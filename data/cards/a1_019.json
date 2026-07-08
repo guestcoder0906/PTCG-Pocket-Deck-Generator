@@ -1,0 +1,10 @@
+{
+  "id": "a1-019",
+  "name": "Weepinbell",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Weepinbell\r\nSTAGE\r\nRazor Leaf\r\n8+20\r\n00\r\nHP90\r\n40\r\n"
+}

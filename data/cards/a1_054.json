@@ -1,0 +1,10 @@
+{
+  "id": "a1-054",
+  "name": "Wartortle",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Wartortle\r\nSTAGE\r\nWave Splash\r\n+20\r\n00\r\nHP80\r\n40\r\n"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "a1-134",
+  "name": "Swoobat",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "woob\r\nHeart Stamp\r\n0+20\r\nbe to\r\n60\r\n"
+}

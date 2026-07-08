@@ -1,0 +1,9 @@
+{
+  "name": "Poké Ball",
+  "type": "Trainer",
+  "subtype": "Item",
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Search your deck for a Basic Pokémon, reveal it, and put it into your hand. Then, shuffle your deck."
+}

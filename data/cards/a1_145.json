@@ -1,0 +1,10 @@
+{
+  "id": "a1-145",
+  "name": "Machamp",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "150\r\nMachamp\r\nSeismic Toss\r\nooo\r\n100\r\n"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "a1-123",
+  "name": "Gengar ex",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "1700\r\nind\r\nAs long as this Pokémon is in the Active Spot, your\r\nopponent can't use any Supporter cards from their hand.\r\nSpooky Shot\r\n0+20\r\n100\r\n"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Dome Fossil",
+  "type": "Trainer",
+  "subtype": "Item",
+  "health": "40",
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Play this card as if it were a Basic Pokémon (Colorless type). It has 40 HP and cannot attack or retreat."
+}

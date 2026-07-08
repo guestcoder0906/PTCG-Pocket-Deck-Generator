@@ -1,0 +1,10 @@
+{
+  "id": "a1-088",
+  "name": "Frogadier",
+  "type": "Unknown",
+  "subtype": null,
+  "health": null,
+  "ability": null,
+  "attacks": [],
+  "rulesOrEffectText": "Frogadier\r\nSTAGE\r\nWater Drip\r\n+20\r\n00\r\nHP80\r\n30\r\n"
+}
