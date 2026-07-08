@@ -125,7 +125,8 @@ const GeneratorPage = () => {
         name: c.name,
         type: c.type,
         hp: c.health,
-        stage: c.stage
+        pack: c.pack,
+        rarity: c.rarity
       }));
 
       const systemPrompt = `You are an absolute expert Pokemon TCG Pocket deck generator, competitive data analyst, and tournament master.
@@ -136,6 +137,16 @@ You MUST analyze the specific mechanics, synergies, and win-conditions of the de
 - Deep Meta Analysis: Automatically filter out cards that are statistically unviable or a waste of deck space in competitive play, unless the user explicitly asks for them. 
 - Synergistic Adaptability: Every single trainer, supporter, and item chosen must make logical sense for the specific Pokemon lineup you've selected. For example, dynamically search for the most optimal acceleration, search, and support cards tailored exactly for the specific Pokemon stages, energy types, and mechanics in the deck.
 - Flexible Optimization: You must anticipate interactions and be extremely smart in your card selection. Adapt dynamically to the user's prompt to find the absolute best 20-card combination possible based on advanced meta intelligence.
+
+CRITICAL EVOLUTIONARY LINE INTEGRITY RULES:
+- You must always respect proper evolutionary chains exactly as they exist in the Pokemon franchise.
+- DO NOT mix up different evolution families! For example, Dratini & Dragonair ONLY evolve into Dragonite, NEVER Haxorus. Axew & Fraxure ONLY evolve into Haxorus, NEVER Dragonite. Charmander & Charmeleon ONLY evolve into Charizard, etc.
+- If you include a Stage 2 Pokemon, you MUST include its proper Basic and Stage 1 pre-evolutions. Mismatching them is a critical failure.
+- Ensure all Pokemon of an evolution line are accurately selected from the Available Cards List.
+
+CRITICAL DUPLICATE CARD NAME RULES:
+- Under NO circumstance should a card name appear more than twice (2 copies max) in the deck, even if they have different card IDs, different sets, or different art styles (e.g. you cannot have 2 copies of Iris from set A and 1 copy of Iris from set B. The absolute maximum total count of cards named "Iris" in the deck is 2).
+- Ensure that you sum the 'count' fields of all cards with the SAME name to be at most 2.
 
 You must be able to perform advanced searches dynamically, accurately, and specifically based on the user's prompt. For example:
 - If they ask for "min hp", filter cards based on that HP threshold.
@@ -174,6 +185,115 @@ A valid Pokemon TCG Pocket deck MUST have exactly 20 cards. CRITICAL RULE: A dec
         parsed = JSON.parse(text.trim());
       } catch (err) {
         throw new Error("Failed to parse the AI response: " + response);
+      }
+
+      // --- Robust Post-Processing Sanitization to Prevent Duplicates and Enforce Rules ---
+      if (parsed && Array.isArray(parsed.cards)) {
+        const uniqueCardsMap = new Map<string, { id: string; count: number; details?: string }>();
+        
+        for (const item of parsed.cards) {
+          if (!item || !item.id) continue;
+          
+          // Find actual card from local dataset to check its name
+          const cardData = cards.find(c => c.id === item.id);
+          if (!cardData) continue;
+          
+          const cleanName = cardData.name.trim();
+          const count = Math.min(Math.max(Number(item.count) || 1, 1), 2);
+          
+          if (uniqueCardsMap.has(cleanName)) {
+            const existing = uniqueCardsMap.get(cleanName)!;
+            existing.count = Math.min(existing.count + count, 2);
+            if (item.details && !existing.details?.includes(item.details)) {
+              existing.details = (existing.details ? existing.details + " " : "") + item.details;
+            }
+          } else {
+            uniqueCardsMap.set(cleanName, {
+              id: item.id,
+              count: count,
+              details: item.details
+            });
+          }
+        }
+        
+        let sanitizedCards = Array.from(uniqueCardsMap.values());
+        let totalCount = sanitizedCards.reduce((sum, c) => sum + c.count, 0);
+        
+        // If greater than 20, truncate down
+        if (totalCount > 20) {
+          for (let i = sanitizedCards.length - 1; i >= 0 && totalCount > 20; i--) {
+            if (sanitizedCards[i].count === 2) {
+              sanitizedCards[i].count = 1;
+              totalCount--;
+            }
+          }
+          while (totalCount > 20 && sanitizedCards.length > 0) {
+            const popped = sanitizedCards.pop();
+            if (popped) {
+              totalCount -= popped.count;
+            }
+          }
+        } 
+        // If less than 20, fill up with smart staples
+        else if (totalCount < 20) {
+          // Check if there is any Stage 2 card or if the user/AI mentioned "Stage 2" or "Stage-2" or "Rare Candy"
+          const hasStage2 = prompt.toLowerCase().includes("stage 2") || 
+                            prompt.toLowerCase().includes("stage2") || 
+                            sanitizedCards.some(c => {
+                              const cd = cards.find(x => x.id === c.id);
+                              return cd && (
+                                cd.name.toLowerCase().includes("haxorus") || 
+                                cd.name.toLowerCase().includes("dragonite") || 
+                                cd.name.toLowerCase().includes("charizard") || 
+                                cd.name.toLowerCase().includes("venusaur") || 
+                                cd.name.toLowerCase().includes("blastoise") || 
+                                cd.name.toLowerCase().includes("gardevoir") || 
+                                cd.name.toLowerCase().includes("gengar") || 
+                                cd.name.toLowerCase().includes("machamp") || 
+                                cd.name.toLowerCase().includes("pidgeot")
+                              );
+                            }) ||
+                            sanitizedCards.some(c => c.details?.toLowerCase().includes("stage 2") || c.details?.toLowerCase().includes("stage-2"));
+
+          const fillStaples = [
+            { id: 'pa-007', name: "Professor's Research" },
+            { id: 'pa-005', name: "Poké Ball" },
+            { id: 'pa-002', name: "X Speed" },
+            { id: 'pa-001', name: "Potion" }
+          ];
+          
+          if (hasStage2) {
+            // Rare Candy is standard/essential for fast Stage 2 decks!
+            fillStaples.unshift({ id: 'a3-144', name: "Rare Candy" });
+          }
+          
+          for (const staple of fillStaples) {
+            if (totalCount >= 20) break;
+            
+            const existingIndex = sanitizedCards.findIndex(c => {
+              const cData = cards.find(x => x.id === c.id);
+              return cData?.name === staple.name;
+            });
+            
+            if (existingIndex !== -1) {
+              if (sanitizedCards[existingIndex].count < 2) {
+                const diff = Math.min(2 - sanitizedCards[existingIndex].count, 20 - totalCount);
+                sanitizedCards[existingIndex].count += diff;
+                totalCount += diff;
+              }
+            } else {
+              const addCount = Math.min(2, 20 - totalCount);
+              sanitizedCards.push({
+                id: staple.id,
+                count: addCount,
+                details: "Staple support card added dynamically to optimize deck synergy and consistency."
+              });
+              totalCount += addCount;
+            }
+          }
+        }
+        
+        parsed.cards = sanitizedCards;
       }
 
       setResult(parsed);
