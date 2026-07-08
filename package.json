@@ -8,9 +8,9 @@
     "dist/images/rarities/*"
   ],
   "scripts": {
-    "dev": "tsx watch server.ts",
+    "dev": "vite",
     "build": "vite build",
-    "start": "tsx server.ts",
+    "start": "vite preview",
     "scraping": "tsx ./scripts/scraps.ts",
     "download": "tsx ./scripts/download-images.ts",
     "sqliteDB": "tsx ./scripts/convert-to-sqlite.ts"

@@ -12,12 +12,9 @@ export default defineConfig({
     'process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID': JSON.stringify(process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID || ''),
     'process.env.REACT_APP_FIREBASE_APP_ID': JSON.stringify(process.env.REACT_APP_FIREBASE_APP_ID || ''),
   },
-  build: {
-    outDir: 'dist/client',
-  },
   server: {
-    proxy: {
-      '/api': 'http://localhost:3000',
-    },
+    port: 3000,
+    host: '0.0.0.0',
+    allowedHosts: 'all'
   },
 });
