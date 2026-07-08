@@ -77,11 +77,33 @@ const GeneratorPage = () => {
   const [result, setResult] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
   const [isSignedIn, setIsSignedIn] = useState(false);
+  const [checkingAuth, setCheckingAuth] = useState(true);
   const [excludedCards, setExcludedCards] = useState<string[]>([]);
 
   React.useEffect(() => {
-    if (window.puter && window.puter.auth) {
-      setIsSignedIn(window.puter.auth.isSignedIn());
+    const checkAuth = () => {
+      if (window.puter && window.puter.auth) {
+        setIsSignedIn(window.puter.auth.isSignedIn());
+        setCheckingAuth(false);
+        return true;
+      }
+      return false;
+    };
+
+    if (!checkAuth()) {
+      const interval = setInterval(() => {
+        if (checkAuth()) {
+          clearInterval(interval);
+        }
+      }, 150);
+      const timeout = setTimeout(() => {
+        clearInterval(interval);
+        setCheckingAuth(false);
+      }, 6000); // Max 6s wait
+      return () => {
+        clearInterval(interval);
+        clearTimeout(timeout);
+      };
     }
   }, []);
 
@@ -90,9 +112,19 @@ const GeneratorPage = () => {
       if (window.puter && window.puter.auth) {
         await window.puter.auth.signIn();
         setIsSignedIn(window.puter.auth.isSignedIn());
+      } else {
+        setError("Puter AI is not loaded yet. Please wait a moment or refresh the page.");
       }
-    } catch (err) {
+    } catch (err: any) {
       console.error("Sign in failed", err);
+      setError("Puter sign-in failed. Please try again.");
+    }
+  };
+
+  const handleSignOut = () => {
+    if (window.puter && window.puter.auth) {
+      window.puter.auth.signOut();
+      setIsSignedIn(false);
     }
   };
 
@@ -328,42 +360,85 @@ A valid Pokemon TCG Pocket deck MUST have exactly 20 cards. CRITICAL RULE: A dec
     <>
       <Header />
       <Container>
-        <Title>AI Deck Generator</Title>
-      <p style={{ textAlign: 'center', marginBottom: '1rem', color: 'var(--text-secondary)' }}>
-        Describe the kind of deck you want, and Puter AI will generate a 20-card list for you.
-      </p>
-
-      {!isSignedIn ? (
-        <div style={{ textAlign: 'center', padding: '2rem', background: 'var(--bg-secondary)', borderRadius: '8px', border: '1px solid var(--border)' }}>
-          <p style={{ marginBottom: '1.5rem', fontSize: '1.1rem' }}>
-            You need to be signed in to Puter to use the AI Deck Generator.
-          </p>
-          <Button onClick={handleSignIn}>Sign In with Puter</Button>
-        </div>
-      ) : (
-        <>
-          <Textarea 
-            placeholder="e.g. A deck that has min 130 hp, no weakness, no retreat cost..."
-            value={prompt}
-            onChange={e => setPrompt(e.target.value)}
-          />
-          
-          <Button onClick={generateDeck} disabled={loading || !prompt.trim() || !cards}>
-            {loading ? 'Generating...' : 'Generate Deck'}
-          </Button>
-
-          {excludedCards.length > 0 && (
-            <div style={{ marginTop: '1rem', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-              <strong>Excluded Cards ({excludedCards.length}):</strong> {excludedCards.map(id => cards?.find(c => c.id === id)?.name || id).join(', ')}
-              <Button variant="outline" size="sm" style={{ marginLeft: '1rem' }} onClick={() => { setExcludedCards([]); }}>
-                Clear Excluded
-              </Button>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '1rem' }}>
+          <Title style={{ margin: 0 }}>AI Deck Generator</Title>
+          {isSignedIn && (
+            <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+                <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#10B981', display: 'inline-block' }}></span>
+                Connected to Puter
+              </span>
+              <button 
+                onClick={handleSignOut}
+                style={{
+                  background: 'transparent',
+                  border: '1px solid var(--border)',
+                  borderRadius: '6px',
+                  color: 'var(--text-secondary)',
+                  padding: '0.25rem 0.75rem',
+                  cursor: 'pointer',
+                  fontSize: '0.8rem',
+                  transition: 'all 0.2s',
+                }}
+              >
+                Sign Out
+              </button>
             </div>
           )}
-        </>
-      )}
+        </div>
+        <p style={{ textAlign: 'center', marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>
+          Describe the kind of deck you want, and Puter AI will generate a 20-card list for you.
+        </p>
 
-      {error && <div style={{ color: 'red', marginTop: '1rem' }}>{error}</div>}
+        {checkingAuth ? (
+          <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-secondary)' }}>
+            <p>Checking Puter Authentication...</p>
+          </div>
+        ) : !isSignedIn ? (
+          <div style={{ textAlign: 'center', padding: '3rem 2rem', background: 'var(--bg-secondary)', borderRadius: '12px', border: '1px solid var(--border)', maxWidth: '550px', margin: '2rem auto', boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }}>
+            <h2 style={{ fontSize: '1.6rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--text)' }}>Sign In with Puter</h2>
+            <p style={{ marginBottom: '2rem', fontSize: '1rem', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+              Puter AI requires you to be logged into your Puter account. Click the button below to sign in or sign up with Puter securely.
+            </p>
+            <Button onClick={handleSignIn} style={{ minWidth: '200px' }}>
+              Sign In with Puter
+            </Button>
+          </div>
+        ) : (
+          <>
+            <Textarea 
+              placeholder="e.g. A deck that has min 130 hp, no weakness, no retreat cost..."
+              value={prompt}
+              onChange={e => setPrompt(e.target.value)}
+              disabled={loading}
+            />
+            
+            <Button onClick={() => generateDeck()} disabled={loading || !prompt.trim() || !cards}>
+              {loading ? 'Generating...' : 'Generate Deck'}
+            </Button>
+
+            {excludedCards.length > 0 && (
+              <div style={{ marginTop: '1rem', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+                <strong>Excluded Cards ({excludedCards.length}):</strong> {excludedCards.map(id => cards?.find(c => c.id === id)?.name || id).join(', ')}
+                <Button 
+                  style={{ 
+                    marginLeft: '1rem', 
+                    padding: '0.25rem 0.75rem', 
+                    fontSize: '0.8rem', 
+                    background: 'transparent', 
+                    border: '1px solid var(--border)', 
+                    color: 'var(--text)' 
+                  }} 
+                  onClick={() => { setExcludedCards([]); }}
+                >
+                  Clear Excluded
+                </Button>
+              </div>
+            )}
+          </>
+        )}
+
+      {error && <div style={{ color: 'red', marginTop: '1rem', textAlign: 'center' }}>{error}</div>}
 
       {result && (
         <ResultContainer>
