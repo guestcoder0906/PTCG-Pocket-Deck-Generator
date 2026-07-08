@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><script src="https://js.puter.com/v2/"></script></head>
+<body>
+<script>
+    window.puter.ai.chat('Say hello').then(res => {
+        document.body.innerHTML += '<div>' + res + '</div>';
+    }).catch(err => {
+        document.body.innerHTML += '<div>Error: ' + err.message + '</div>';
+    });
+</script>
+</body>
+</html>

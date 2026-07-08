@@ -1,0 +1,175 @@
+{
+  "deckPage": {
+    "matchups": "マッチアップ",
+    "strongAgainst": "強い相手",
+    "weakAgainst": "弱い相手",
+    "deckFinderHeader": "持っていないカードをクリックしてください。デッキは利用可能なカードで最適なデッキを表示するように更新されます。",
+    "relativeStrength": "相対的な強さ",
+    "keyStats": "主要な統計",
+    "popularity": "人気度",
+    "strength": "強さ",
+    "winRate": "勝率",
+    "notEnoughCards": "カードが足りません",
+    "tryAnotherDeck": "別のデッキを試してください",
+    "alternatives": "代替案"
+  },
+  "energyDropdown": {
+    "all": "すべてのエネルギータイプ",
+    "Grass": "くさ",
+    "Fire": "ほのお",
+    "Water": "みず",
+    "Lightning": "でんき",
+    "Psychic": "エスパー",
+    "Fighting": "かくとう",
+    "Darkness": "あく",
+    "Metal": "はがね",
+    "Dragon": "ドラゴン",
+    "Colorless": "ノーマル"
+  },
+  "filter": {
+    "includeEx": "EXカードを含める",
+    "deckAmount": "デッキ数",
+    "sortBy": "並び替え",
+    "score": "総合最強",
+    "popularity": "人気度",
+    "strength": "強さ",
+    "winRate": "勝率",
+    "latestExpansionCards": "最新拡張パックのカード",
+    "latestExpansionCardsAny": "任意"
+  },
+  "bestDeckFinder": {
+    "title": "最適なデッキを見つけよう",
+    "description1": "あなたのコレクションで作れる最強のデッキを発見しましょう。ベストデッキファインダーは、まずゲーム内の最強デッキを表示し、持っていないカードをクリックすると、それらのカードを使用しない次善のデッキを表示します。",
+    "description2": "持っているカードだけで構成されたデッキが見つかるまで、カードを除外し続けてください。相対強度インジケーターは、あなたのデッキがゲーム内の最強デッキと比較してどれだけ強力かを示します。",
+    "button": "ベストデッキファインダーを試す"
+  },
+  "header": {
+    "tierList": "ティアリスト",
+    "bestDeckFinder": "ベストデッキファインダー",
+    "signIn": "Googleでログイン",
+    "signOut": "ログアウト",
+    "bestCards": "ベストカード"
+  },
+  "footer": {
+    "about": "概要",
+    "privacy": "プライバシーポリシー"
+  },
+  "hero": {
+    "title": "ポケモンカードゲーム ポケット 最強デッキとティアリスト",
+    "subtitle": "データに基づいたデッキティアリストで、ポケモンカードゲーム ポケットのメタを先取りしましょう。トーナメント結果から構築され、完全なリストを見つけ、持っていないカードをマークし、今すぐ作れる最強のデッキを発見できます。",
+    "button": "ティアリストを見る"
+  },
+  "features": {
+    "title": "機能",
+    "tournamentResults": {
+      "title": "トーナメント結果",
+      "description": "ティアリストはトーナメント結果に基づいており、アルゴリズムでティアとデッキリストを決定します"
+    },
+    "weeklyUpdates": {
+      "title": "週間更新",
+      "description": "ティアリストは毎週更新され、毎週月曜日に新しいデッキとマッチアップが追加されます"
+    },
+    "filters": {
+      "title": "フィルター",
+      "description": "エネルギータイプやEXカードなしでデッキをフィルタリングし、ソロバトル攻略に役立ちます"
+    },
+    "missingCards": {
+      "title": "所持していないカード",
+      "description": "所持していないカードをクリックすると、ティアリストが自動的に更新され、所持しているカードに基づいて表示されます"
+    },
+    "matchups": {
+      "title": "マッチアップ",
+      "description": "どのデッキが他のデッキに対して強いか、そして勝率を確認できます"
+    },
+    "openSource": {
+      "title": "オープンソース",
+      "description": "このウェブサイトはオープンソースです。ソースコードは<0>GitHub</0>で見つけることができます"
+    },
+    "sortBy": {
+      "title": "代替ランキング",
+      "description": "ティアリストを人気度や強さで並び替えることができます",
+      "free": "🚫",
+      "premium": "✅"
+    }
+  },
+  "premium": {
+    "title": "Top Pocket Decks Premium",
+    "description": "すべての機能をアンロックし、プロジェクトをサポートするためにプレミアムを取得してください。",
+    "signIn": "プレミアムを取得するにはサインインしてください",
+    "getPremium": "プレミアムを取得",
+    "getPremiumMonthly": "または月額$3",
+    "getPremiumYearly": "プレミアムを年間$18で取得（50%オフ！）",
+    "freeTrial": "7日間の無料トライアル付き · いつでもキャンセル可能",
+    "headline": "広告を非表示にしてすべてを解放",
+    "manageSubscription": "サブスクリプション管理",
+    "features": {
+      "title": "機能",
+      "free": "無料",
+      "premium": "プレミアム",
+      "removeAds": {
+        "title": "広告を非表示",
+        "description": "サイト全体で広告のない、より快適で高速な体験をお楽しみください。",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "bestDeckFinder": {
+        "title": "ベストデッキファインダー",
+        "description": "あなたのカードで作れる最強のデッキを見つけましょう",
+        "free": "✅",
+        "premium": "✅"
+      },
+      "exclude": {
+        "title": "所持していないカードを除外",
+        "description": "所持していないカードをフィルタリングして、ティアリストを所持カードに基づいてリアルタイムで更新",
+        "free": "✅",
+        "premium": "✅"
+      },
+      "matchups": {
+        "title": "デッキの強み/弱み",
+        "description": "各デッキについて、どのデッキに対して強く、どのデッキに対して弱いかを勝率とともに確認",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "filters": {
+        "title": "デッキフィルター",
+        "description": "エネルギータイプやEXカードなしでデッキをフィルタリングし、ソロバトル攻略に役立ちます",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "sortBy": {
+        "title": "代替ランキング",
+        "description": "ティアリストを人気度や強さで並び替えることができます",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "contact": {
+        "title": "開発者に連絡",
+        "description": "メールで開発者に連絡し、サイトへのフィードバックを提供したり、新機能の追加をリクエストしたり、バグを報告したりできます。機能リクエストは完了が保証されませんが、すべて検討されます。",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "updated": {
+        "title": "ティアリスト更新",
+        "description": "ティアリストが新しいデータで更新される頻度。より速い更新でメタに先んじることができます。",
+        "free": "週間",
+        "premium": "日単位"
+      },
+      "decks": {
+        "title": "ティアリストのデッキ",
+        "description": "ティアリストに表示されるデッキの数。より多くのデッキはより多くの選択肢を意味します。まだ人気になっていない強力なデッキを発見しましょう。",
+        "free": "30",
+        "premium": "100"
+      }
+    }
+  },
+  "ads": {
+    "advertisement": "広告",
+    "removeAds": "広告を非表示",
+    "close": "閉じる"
+  },
+  "userAccount": {
+    "title": "ユーザーアカウント",
+    "signOut": "サインアウト"
+  },
+  "lastUpdated": "最終更新："
+}

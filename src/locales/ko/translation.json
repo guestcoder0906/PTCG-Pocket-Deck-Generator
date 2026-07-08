@@ -1,0 +1,175 @@
+{
+  "deckPage": {
+    "matchups": "매치업",
+    "strongAgainst": "강점",
+    "weakAgainst": "약점",
+    "deckFinderHeader": "가지고 있지 않은 카드를 클릭하세요. 덱이 보유한 카드로 최고의 덱을 보여줍니다.",
+    "relativeStrength": "상대적 강도",
+    "keyStats": "주요 통계",
+    "popularity": "인기도",
+    "strength": "강도",
+    "winRate": "승률",
+    "notEnoughCards": "카드가 부족합니다",
+    "tryAnotherDeck": "다른 덱을 시도해보세요",
+    "alternatives": "대안"
+  },
+  "energyDropdown": {
+    "all": "모든 에너지 타입",
+    "Grass": "풀",
+    "Fire": "불꽃",
+    "Water": "물",
+    "Lightning": "번개",
+    "Psychic": "에스퍼",
+    "Fighting": "격투",
+    "Darkness": "악",
+    "Metal": "강철",
+    "Dragon": "드래곤",
+    "Colorless": "노말"
+  },
+  "filter": {
+    "includeEx": "EX 카드 포함",
+    "deckAmount": "덱 수",
+    "sortBy": "정렬 기준",
+    "score": "종합 최고",
+    "popularity": "인기도",
+    "strength": "강도",
+    "winRate": "승률",
+    "latestExpansionCards": "최신 확장팩 카드",
+    "latestExpansionCardsAny": "모두"
+  },
+  "bestDeckFinder": {
+    "title": "최고의 덱 찾기",
+    "description1": "당신의 컬렉션으로 만들 수 있는 가장 강력한 덱을 발견하세요. 베스트 덱 파인더는 먼저 게임에서 가장 강력한 덱을 보여주고, 가지고 있지 않은 카드를 클릭하면 해당 카드를 사용하지 않는 다음으로 좋은 덱을 보여줍니다.",
+    "description2": "모든 카드를 가지고 있는 덱을 찾을 때까지 카드를 계속 제거하세요. 상대적 강도 지표는 당신의 덱이 게임에서 가장 강력한 덱과 비교하여 얼마나 강력한지 보여줍니다.",
+    "button": "베스트 덱 파인더 사용하기"
+  },
+  "header": {
+    "tierList": "티어 리스트",
+    "bestDeckFinder": "최고의 덱 찾기",
+    "signIn": "Google로 로그인",
+    "signOut": "로그아웃",
+    "bestCards": "최고의 카드"
+  },
+  "footer": {
+    "about": "소개",
+    "privacy": "개인정보 처리방침"
+  },
+  "hero": {
+    "title": "포켓몬 카드게임 포켓 최고의 덱과 티어 리스트",
+    "subtitle": "데이터 기반 덱 티어 리스트로 포켓몬 카드게임 포켓의 메타를 앞서나가세요. 토너먼트 결과를 바탕으로 구축되어, 완전한 리스트를 찾고, 가지고 있지 않은 카드를 표시하며, 지금 바로 만들 수 있는 가장 강력한 덱을 발견하세요.",
+    "button": "티어 리스트 보기"
+  },
+  "features": {
+    "title": "기능",
+    "tournamentResults": {
+      "title": "토너먼트 결과",
+      "description": "티어 리스트는 토너먼트 결과를 기반으로 하며, 알고리즘으로 티어와 덱 리스트를 결정합니다"
+    },
+    "weeklyUpdates": {
+      "title": "주간 업데이트",
+      "description": "티어 리스트는 매주 업데이트되며, 매주 월요일에 새로운 덱과 매치업이 추가됩니다"
+    },
+    "filters": {
+      "title": "필터",
+      "description": "에너지 타입이나 EX 카드 없이 덱을 필터링하여 솔로 배틀 공략에 도움이 됩니다"
+    },
+    "missingCards": {
+      "title": "보유하지 않은 카드",
+      "description": "보유하지 않은 카드를 클릭하면 티어 리스트가 자동으로 업데이트되어 보유한 카드에 따라 표시됩니다"
+    },
+    "matchups": {
+      "title": "매치업",
+      "description": "어떤 덱이 다른 덱에 대해 강한지, 그리고 승률을 확인할 수 있습니다"
+    },
+    "openSource": {
+      "title": "오픈소스",
+      "description": "이 웹사이트는 오픈소스입니다. 소스 코드는 <0>GitHub</0>에서 찾을 수 있습니다"
+    },
+    "sortBy": {
+      "title": "대체 순위",
+      "description": "티어 리스트를 인기도나 강도로 정렬할 수 있습니다",
+      "free": "🚫",
+      "premium": "✅"
+    }
+  },
+  "premium": {
+    "title": "Top Pocket Decks Premium",
+    "description": "모든 기능을 잠금 해제하고 프로젝트를 지원하려면 프리미엄을 구독하세요.",
+    "signIn": "프리미엄을 구독하려면 로그인하세요",
+    "getPremium": "프리미엄 구독",
+    "getPremiumMonthly": "또는 월 $3",
+    "getPremiumYearly": "프리미엄 연 $18 (50% 할인!)",
+    "freeTrial": "7일 무료 체험 포함 · 언제든지 취소 가능",
+    "headline": "광고 제거 & 모든 기능 잠금 해제",
+    "manageSubscription": "구독 관리",
+    "features": {
+      "title": "기능",
+      "free": "무료",
+      "premium": "프리미엄",
+      "removeAds": {
+        "title": "광고 제거",
+        "description": "사이트 전체에서 광고 없이 더 빠른 경험을 즐기세요.",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "bestDeckFinder": {
+        "title": "최고의 덱 찾기",
+        "description": "보유한 카드로 만들 수 있는 가장 강력한 덱을 찾으세요",
+        "free": "✅",
+        "premium": "✅"
+      },
+      "exclude": {
+        "title": "보유하지 않은 카드 제외",
+        "description": "보유하지 않은 카드를 필터링하여 보유한 카드에 따라 티어 리스트를 실시간으로 업데이트",
+        "free": "✅",
+        "premium": "✅"
+      },
+      "matchups": {
+        "title": "덱 강점/약점",
+        "description": "각 덱에 대해 어떤 덱에 강하고 약한지, 승률을 포함하여 확인",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "filters": {
+        "title": "덱 필터",
+        "description": "에너지 타입이나 EX 카드 없이 덱을 필터링하여 솔로 배틀 공략에 도움",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "sortBy": {
+        "title": "대체 순위",
+        "description": "티어 리스트를 인기도나 강도로 정렬할 수 있습니다",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "contact": {
+        "title": "개발자에게 문의",
+        "description": "이메일을 통해 개발자에게 사이트에 대한 피드백을 제공하고, 새로운 기능 추가를 요청하거나 버그를 보고하세요. 기능 요청은 완료가 보장되지 않지만, 모든 요청이 검토됩니다.",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "updated": {
+        "title": "티어 리스트 업데이트",
+        "description": "티어 리스트가 새로운 데이터로 업데이트되는 빈도. 더 빠른 업데이트로 메타를 앞서나갈 수 있습니다.",
+        "free": "주간",
+        "premium": "일별"
+      },
+      "decks": {
+        "title": "티어 리스트의 덱",
+        "description": "티어 리스트에 표시되는 덱의 수. 더 많은 덱은 더 많은 선택지를 의미합니다. 아직 인기 있지 않은 강력한 덱을 발견하세요.",
+        "free": "30",
+        "premium": "100"
+      }
+    }
+  },
+  "ads": {
+    "advertisement": "광고",
+    "removeAds": "광고 제거",
+    "close": "닫기"
+  },
+  "userAccount": {
+    "title": "사용자 계정",
+    "signOut": "로그아웃"
+  },
+  "lastUpdated": "마지막 업데이트:"
+}

@@ -1,0 +1,169 @@
+{
+  "deckPage": {
+    "matchups": "Matchups",
+    "strongAgainst": "Stark Gegen",
+    "weakAgainst": "Schwach Gegen",
+    "deckFinderHeader": "Klicken Sie auf die Karten, die Sie nicht haben. Das Deck wird aktualisiert, um das Beste mit Ihren verfügbaren Karten zu zeigen.",
+    "relativeStrength": "Relative Stärke",
+    "keyStats": "Wichtige Statistiken",
+    "popularity": "Beliebtheit",
+    "strength": "Stärke",
+    "winRate": "Gewinnrate",
+    "notEnoughCards": "Nicht genug Karten",
+    "tryAnotherDeck": "versuchen Sie ein anderes Deck",
+    "alternatives": "Alternativen"
+  },
+  "energyDropdown": {
+    "all": "Alle Energietypen",
+    "Grass": "Pflanze",
+    "Fire": "Feuer",
+    "Water": "Wasser",
+    "Lightning": "Elektro",
+    "Psychic": "Psycho",
+    "Fighting": "Kampf",
+    "Darkness": "Finsternis",
+    "Metal": "Metall",
+    "Dragon": "Drache",
+    "Colorless": "Farblos"
+  },
+  "filter": {
+    "includeEx": "EX-Karten einbeziehen",
+    "deckAmount": "Anzahl der Decks",
+    "sortBy": "Sortieren nach",
+    "score": "Gesamtbeste",
+    "popularity": "Beliebtheit",
+    "strength": "Stärke",
+    "winRate": "Gewinnrate",
+    "latestExpansionCards": "Karten aus neuester Erweiterung",
+    "latestExpansionCardsAny": "Beliebig"
+  },
+  "bestDeckFinder": {
+    "title": "Finde Dein Bestes Deck",
+    "description1": "Entdecke das stärkste Deck, das du mit deiner Sammlung bauen kannst. Der Beste Deck Finder zeigt dir zunächst das beste Deck im Spiel, aber du kannst auf Karten klicken, die du nicht hast. Es zeigt dir dann das nächstbeste Deck, das diese Karten nicht verwendet.",
+    "description2": "Entferne weiterhin Karten, bis du ein Deck findest, in dem du alles hast. Der relative Stärke-Indikator zeigt dir, wie mächtig dein Deck im Vergleich zum besten Deck im Spiel ist.",
+    "button": "Beste Deck Finder ausprobieren"
+  },
+  "header": {
+    "tierList": "Tier-Liste",
+    "bestDeckFinder": "Bester Deck-Finder",
+    "signIn": "Mit Google anmelden",
+    "signOut": "Abmelden",
+    "bestCards": "Beste Karten"
+  },
+  "footer": {
+    "about": "Über uns",
+    "privacy": "Datenschutz"
+  },
+  "hero": {
+    "title": "Pokémon TCG Pocket Beste Decks und Tier-Liste",
+    "subtitle": "Bleibe mit einer datengesteuerten Deck-Tier-Liste dem Pokémon TCG Pocket Meta voraus. Basierend auf Turnierergebnissen, finde vollständige Listen, markiere fehlende Karten und entdecke die stärksten Decks, die du jetzt bauen kannst.",
+    "button": "Tier-Liste anzeigen"
+  },
+  "features": {
+    "title": "Funktionen",
+    "tournamentResults": {
+      "title": "Turnierergebnisse",
+      "description": "Die Tier-Liste basiert auf Turnierergebnissen, mit einem Algorithmus zur Bestimmung des Tiers und der Deckliste"
+    },
+    "weeklyUpdates": {
+      "title": "Wöchentliche Updates",
+      "description": "Die Tier-Liste wird wöchentlich aktualisiert, mit neuen Decks und Matchups, die jeden Montag hinzugefügt werden"
+    },
+    "filters": {
+      "title": "Filter",
+      "description": "Filtere Decks nach Energietyp oder ohne Ex-Karten, nützlich um einige dieser Solo-Kämpfe zu gewinnen"
+    },
+    "missingCards": {
+      "title": "Fehlende Karten",
+      "description": "Klicke auf Karten, die dir fehlen, und die Tier-Liste wird automatisch für deine verfügbaren Karten aktualisiert"
+    },
+    "matchups": {
+      "title": "Deck-Duelle",
+      "description": "Siehe Matchup-Daten, welche Decks gegen andere stark sind, und ihre Gewinnraten"
+    },
+    "openSource": {
+      "title": "Open Source",
+      "description": "Diese Website ist Open Source, du findest den Quellcode auf <0>GitHub</0>"
+    }
+  },
+  "premium": {
+    "title": "Top Pocket Decks Premium",
+    "description": "Holen Sie sich Premium, um alle Funktionen freizuschalten und das Projekt zu unterstützen.",
+    "signIn": "Anmelden für Premium",
+    "getPremium": "Premium erhalten",
+    "getPremiumMonthly": "oder 3€/Monat",
+    "getPremiumYearly": "Premium für 18€/Jahr (50% sparen)",
+    "freeTrial": "7 Tage kostenlos testen · Jederzeit kündbar",
+    "headline": "Werbung entfernen & alles freischalten",
+    "manageSubscription": "Abonnement verwalten",
+    "features": {
+      "title": "Funktionen",
+      "free": "Kostenlos",
+      "premium": "Premium",
+      "removeAds": {
+        "title": "Werbung entfernen",
+        "description": "Genießen Sie ein völlig werbefreies, schnelleres Erlebnis auf der gesamten Website.",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "bestDeckFinder": {
+        "title": "Bester Deck-Finder",
+        "description": "Finden Sie das stärkste Deck, das Sie mit Ihren Karten bauen können",
+        "free": "✅",
+        "premium": "✅"
+      },
+      "exclude": {
+        "title": "Karten ausschließen, die Sie nicht haben",
+        "description": "Filtern Sie Karten aus, die Sie nicht besitzen, um die Tier-Liste live mit Ihren verfügbaren Karten zu aktualisieren",
+        "free": "✅",
+        "premium": "✅"
+      },
+      "matchups": {
+        "title": "Deck-Stärken/Schwächen",
+        "description": "Sehen Sie für jedes Deck, gegen welche Decks es stark oder schwach ist, einschließlich Gewinnraten",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "filters": {
+        "title": "Deck-Filter",
+        "description": "Filtern Sie Decks nach Energie oder ohne Ex-Karten, nützlich für Solo-Kämpfe",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "sortBy": {
+        "title": "Alternative Ranglisten",
+        "description": "Ändern Sie die Tier-Liste, um sie nach Beliebtheit oder Stärke zu sortieren",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "contact": {
+        "title": "Entwickler Kontaktieren",
+        "description": "Kontaktieren Sie die Entwickler per E-Mail, um Feedback zur Website zu geben, neue Funktionen anzufordern oder Fehler zu melden. Funktionsanfragen sind nicht garantiert, werden aber alle berücksichtigt.",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "updated": {
+        "title": "Tier-Liste aktualisiert",
+        "description": "Wie oft die Tier-Liste mit neuen Daten aktualisiert wird. Schnellere Updates helfen Ihnen, dem Meta voraus zu sein.",
+        "free": "Wöchentlich",
+        "premium": "Täglich"
+      },
+      "decks": {
+        "title": "Decks in der Tier-Liste",
+        "description": "Anzahl der Decks in der Tier-Liste. Mehr Decks bedeutet mehr Auswahlmöglichkeiten. Entdecken Sie starke Decks, die noch nicht populär sind.",
+        "free": "30",
+        "premium": "100"
+      }
+    }
+  },
+  "ads": {
+    "advertisement": "Werbung",
+    "removeAds": "Werbung entfernen",
+    "close": "Schließen"
+  },
+  "userAccount": {
+    "title": "Benutzerkonto",
+    "signOut": "Abmelden"
+  },
+  "lastUpdated": "Zuletzt aktualisiert:"
+}

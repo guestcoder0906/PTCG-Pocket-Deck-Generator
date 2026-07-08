@@ -1,0 +1,169 @@
+{
+  "deckPage": {
+    "matchups": "Enfrentamientos",
+    "strongAgainst": "Fuerte Contra",
+    "weakAgainst": "Débil Contra",
+    "deckFinderHeader": "Haz clic en las cartas que no tienes. El mazo se actualizará para mostrar el mejor con tus cartas disponibles.",
+    "relativeStrength": "Fuerza Relativa",
+    "keyStats": "Estadísticas Clave",
+    "popularity": "Popularidad",
+    "strength": "Fuerza",
+    "winRate": "Tasa de Victoria",
+    "notEnoughCards": "No hay suficientes cartas",
+    "tryAnotherDeck": "prueba otro mazo",
+    "alternatives": "Alternativas"
+  },
+  "energyDropdown": {
+    "all": "Todos los tipos de Energía",
+    "Grass": "Planta",
+    "Fire": "Fuego",
+    "Water": "Agua",
+    "Lightning": "Rayo",
+    "Psychic": "Psíquico",
+    "Fighting": "Lucha",
+    "Darkness": "Oscuridad",
+    "Metal": "Metálico",
+    "Dragon": "Dragón",
+    "Colorless": "Incolora"
+  },
+  "filter": {
+    "includeEx": "Incluir cartas EX",
+    "deckAmount": "Número de Mazos",
+    "sortBy": "Ordenar por",
+    "score": "Mejor General",
+    "popularity": "Popularidad",
+    "strength": "Fuerza",
+    "winRate": "Tasa de Victoria",
+    "latestExpansionCards": "Cartas de la expansión más reciente",
+    "latestExpansionCardsAny": "Cualquiera"
+  },
+  "bestDeckFinder": {
+    "title": "Encuentra Tu Mejor Mazo",
+    "description1": "Descubre el mazo más fuerte que puedes construir con tu colección. El Buscador de Mejores Mazos comienza mostrándote el mejor mazo del juego, pero puedes hacer clic en las cartas que no tienes. Luego te mostrará el siguiente mejor mazo que no usa esas cartas.",
+    "description2": "Sigue eliminando cartas hasta encontrar un mazo donde tengas todo. El indicador de fuerza relativa te muestra qué tan poderoso es tu mazo en comparación con el mejor mazo del juego.",
+    "button": "Probar el Buscador de Mejores Mazos"
+  },
+  "header": {
+    "tierList": "Lista de Niveles",
+    "bestDeckFinder": "Buscador de Mejores Mazos",
+    "signIn": "Iniciar sesión con Google",
+    "signOut": "Cerrar sesión",
+    "bestCards": "Mejores Cartas"
+  },
+  "footer": {
+    "about": "Acerca de",
+    "privacy": "Política de Privacidad"
+  },
+  "hero": {
+    "title": "Mejores Mazos y Lista de Tiers de Pokémon TCG Pocket",
+    "subtitle": "Mantente al día con el meta de Pokémon TCG Pocket con una lista de tiers basada en datos. Construida a partir de resultados de torneos, encuentra listas completas, marca las cartas que te faltan y descubre las construcciones más fuertes que puedes crear ahora mismo.",
+    "button": "Ver Lista de Tiers"
+  },
+  "features": {
+    "title": "Características",
+    "tournamentResults": {
+      "title": "Resultados de Torneos",
+      "description": "La lista de tiers se basa en resultados de torneos, con un algoritmo para determinar el tier y la lista de mazo"
+    },
+    "weeklyUpdates": {
+      "title": "Actualizaciones Semanales",
+      "description": "La lista de tiers se actualiza semanalmente, con nuevos mazos y enfrentamientos añadidos cada lunes"
+    },
+    "filters": {
+      "title": "Filtros",
+      "description": "Filtra mazos por tipo de Energía o sin cartas Ex, útil para ayudar a vencer algunos de esos Combates en Solitario"
+    },
+    "missingCards": {
+      "title": "Cartas Faltantes",
+      "description": "Haz clic en las cartas que te faltan, y la lista de tiers se actualizará automáticamente según lo que tengas"
+    },
+    "matchups": {
+      "title": "Enfrentamientos",
+      "description": "Consulta los datos de enfrentamientos para ver qué mazos son fuertes contra otros, y sus tasas de victoria"
+    },
+    "openSource": {
+      "title": "Código Abierto",
+      "description": "Este sitio web es de código abierto, puedes encontrar el código fuente en <0>GitHub</0>"
+    }
+  },
+  "premium": {
+    "title": "Top Pocket Decks Premium",
+    "description": "Obtén Premium para desbloquear todas las funciones y apoyar el proyecto.",
+    "signIn": "Inicia sesión para obtener Premium",
+    "getPremium": "Obtener Premium",
+    "getPremiumMonthly": "o $3/mes",
+    "getPremiumYearly": "Obtener Premium — $18/año (¡Ahorra 50%!)",
+    "freeTrial": "Incluye 7 días de prueba gratis · Cancela cuando quieras",
+    "headline": "Elimina los anuncios y desbloquea todo",
+    "manageSubscription": "Gestionar Suscripción",
+    "features": {
+      "title": "Características",
+      "free": "Gratis",
+      "premium": "Premium",
+      "removeAds": {
+        "title": "Eliminar Anuncios",
+        "description": "Disfruta de una experiencia totalmente sin anuncios y más rápida en todo el sitio.",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "bestDeckFinder": {
+        "title": "Buscador de Mejores Mazos",
+        "description": "Encuentra el mazo más fuerte que puedes construir con tus cartas",
+        "free": "✅",
+        "premium": "✅"
+      },
+      "exclude": {
+        "title": "Excluir Cartas que No Tienes",
+        "description": "Filtra las cartas que no posees para actualizar la lista de niveles en vivo con lo que tienes",
+        "free": "✅",
+        "premium": "✅"
+      },
+      "matchups": {
+        "title": "Fortalezas/Debilidades de Mazos",
+        "description": "Para cada mazo, ve contra cuáles es fuerte o débil, incluyendo tasas de victoria",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "filters": {
+        "title": "Filtros de Mazos",
+        "description": "Filtra mazos por Energía o sin cartas Ex, útil para ayudarte a ganar algunos Combates en Solitario",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "sortBy": {
+        "title": "Clasificaciones Alternativas",
+        "description": "Cambia la lista de niveles para que se clasifique por Popularidad o Fuerza",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "contact": {
+        "title": "Contactar con los Desarrolladores",
+        "description": "Contacta con los desarrolladores por correo electrónico para dar cualquier comentario sobre el sitio, solicitar nuevas funciones o informar de errores. Las solicitudes de funciones no están garantizadas, pero todas serán consideradas.",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "updated": {
+        "title": "Lista de Niveles Actualizada",
+        "description": "Con qué frecuencia se actualiza la lista de niveles con nuevos datos. Actualizaciones más rápidas te ayudan a mantenerte al día con el meta.",
+        "free": "Semanalmente",
+        "premium": "Diario"
+      },
+      "decks": {
+        "title": "Mazos en la Lista de Niveles",
+        "description": "Número de mazos mostrados en la lista de niveles. Más mazos significa más opciones para elegir. Descubre mazos fuertes que aún no se han vuelto populares.",
+        "free": "30",
+        "premium": "100"
+      }
+    }
+  },
+  "ads": {
+    "advertisement": "Anuncio",
+    "removeAds": "Eliminar anuncios",
+    "close": "Cerrar"
+  },
+  "userAccount": {
+    "title": "Cuenta de Usuario",
+    "signOut": "Cerrar sesión"
+  },
+  "lastUpdated": "Última actualización:"
+}

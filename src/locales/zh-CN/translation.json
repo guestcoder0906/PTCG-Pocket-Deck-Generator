@@ -1,0 +1,169 @@
+{
+  "deckPage": {
+    "matchups": "对战",
+    "strongAgainst": "优势对抗",
+    "weakAgainst": "劣势对抗",
+    "deckFinderHeader": "点击你没有的卡牌。卡组将更新以显示你可用卡牌的最佳组合。",
+    "relativeStrength": "相对强度",
+    "keyStats": "关键数据",
+    "popularity": "流行度",
+    "strength": "强度",
+    "winRate": "胜率",
+    "notEnoughCards": "卡牌不足",
+    "tryAnotherDeck": "请尝试其他卡组",
+    "alternatives": "替代方案"
+  },
+  "energyDropdown": {
+    "all": "所有能量类型",
+    "Grass": "草",
+    "Fire": "火",
+    "Water": "水",
+    "Lightning": "雷",
+    "Psychic": "超能力",
+    "Fighting": "格斗",
+    "Darkness": "恶",
+    "Metal": "钢",
+    "Dragon": "龙",
+    "Colorless": "无色"
+  },
+  "filter": {
+    "includeEx": "包含EX卡牌",
+    "deckAmount": "卡组数量",
+    "sortBy": "排序方式",
+    "score": "综合最佳",
+    "popularity": "流行度",
+    "strength": "强度",
+    "winRate": "胜率",
+    "latestExpansionCards": "最新扩展包卡牌",
+    "latestExpansionCardsAny": "任意"
+  },
+  "bestDeckFinder": {
+    "title": "寻找您的最佳卡组",
+    "description1": "探索您能用收藏卡牌组建的最强卡组。最佳卡组搜索器首先会显示游戏中最强的卡组，但您可以点击您没有的卡牌。它会随后显示不使用这些卡牌的次佳卡组。",
+    "description2": "持续移除卡牌，直到找到一个您拥有所有卡牌的卡组。相对强度指标会显示您的卡组与游戏中最强卡组相比的强度。",
+    "button": "试用最佳卡组搜索器"
+  },
+  "header": {
+    "tierList": "卡组等级表",
+    "bestDeckFinder": "最佳卡组查找器",
+    "signIn": "使用谷歌登录",
+    "signOut": "退出登录",
+    "bestCards": "最佳卡牌"
+  },
+  "footer": {
+    "about": "关于",
+    "privacy": "隐私政策"
+  },
+  "hero": {
+    "title": "宝可梦卡牌游戏 Pocket 最强卡组和等级列表",
+    "subtitle": "通过数据驱动的卡组等级列表，领先宝可梦卡牌游戏 Pocket 的环境。基于比赛结果构建，查找完整列表，标记您缺少的卡牌，并发现您现在可以构建的最强卡组。",
+    "button": "查看等级列表"
+  },
+  "features": {
+    "title": "功能",
+    "tournamentResults": {
+      "title": "比赛结果",
+      "description": "等级列表基于比赛结果，使用算法确定等级和卡组列表"
+    },
+    "weeklyUpdates": {
+      "title": "每周更新",
+      "description": "等级列表每周更新，每周一添加新的卡组和对战数据"
+    },
+    "filters": {
+      "title": "筛选",
+      "description": "按能量类型或无EX卡牌筛选卡组，有助于击败单人战斗"
+    },
+    "missingCards": {
+      "title": "缺失卡牌",
+      "description": "点击您缺少的卡牌，等级列表将根据您拥有的卡牌自动更新"
+    },
+    "matchups": {
+      "title": "对战数据",
+      "description": "查看哪些卡组对其他卡组有优势，以及它们的胜率"
+    },
+    "openSource": {
+      "title": "开源项目",
+      "description": "本网站是开源的，您可以在<0>GitHub</0>上找到源代码"
+    }
+  },
+  "premium": {
+    "title": "Top Pocket Decks Premium",
+    "description": "获取高级会员以解锁所有功能并支持项目发展。",
+    "signIn": "登录以获取高级会员",
+    "getPremium": "获取高级会员",
+    "getPremiumMonthly": "或 $3/月",
+    "getPremiumYearly": "高级会员 $18/年（省50%！）",
+    "freeTrial": "包含7天免费试用 · 随时取消",
+    "headline": "去除广告，解锁全部功能",
+    "manageSubscription": "管理订阅",
+    "features": {
+      "title": "功能",
+      "free": "免费",
+      "premium": "高级会员",
+      "removeAds": {
+        "title": "去除广告",
+        "description": "在整个网站享受完全无广告、更快速的体验。",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "bestDeckFinder": {
+        "title": "最佳卡组查找器",
+        "description": "找到您能用收藏卡牌组建的最强卡组",
+        "free": "✅",
+        "premium": "✅"
+      },
+      "exclude": {
+        "title": "排除未拥有的卡牌",
+        "description": "过滤掉您没有的卡牌，实时更新等级列表以显示您拥有的卡牌",
+        "free": "✅",
+        "premium": "✅"
+      },
+      "matchups": {
+        "title": "卡组优势/劣势",
+        "description": "查看每个卡组对哪些卡组有优势或劣势，包括胜率",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "filters": {
+        "title": "卡组筛选",
+        "description": "按能量类型或无EX卡牌筛选卡组，有助于击败单人战斗",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "sortBy": {
+        "title": "替代排名",
+        "description": "将等级列表更改为按流行度或强度排名",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "contact": {
+        "title": "联系开发者",
+        "description": "通过电子邮件联系开发者，提供网站反馈、请求新功能或报告错误。功能请求不保证完成，但都会得到考虑。",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "updated": {
+        "title": "等级列表更新",
+        "description": "等级列表更新新数据的频率。更快的更新帮助您领先于环境。",
+        "free": "每周",
+        "premium": "每日"
+      },
+      "decks": {
+        "title": "等级列表中的卡组",
+        "description": "等级列表中显示的卡组数量。更多卡组意味着更多选择。发现尚未流行的强力卡组。",
+        "free": "30",
+        "premium": "100"
+      }
+    }
+  },
+  "ads": {
+    "advertisement": "广告",
+    "removeAds": "去除广告",
+    "close": "关闭"
+  },
+  "userAccount": {
+    "title": "用户账户",
+    "signOut": "退出登录"
+  },
+  "lastUpdated": "最后更新："
+}
