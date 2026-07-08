@@ -66,8 +66,8 @@ const ResultContainer = styled.div`
 
 const CardGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1.25rem;
   margin-top: 1.5rem;
 `;
 
@@ -79,6 +79,16 @@ const GeneratorPage = () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [checkingAuth, setCheckingAuth] = useState(true);
   const [excludedCards, setExcludedCards] = useState<string[]>([]);
+
+  // Advanced search filters state
+  const [showFilters, setShowFilters] = useState(false);
+  const [maxEnergy, setMaxEnergy] = useState('any');
+  const [minHP, setMinHP] = useState('any');
+  const [maxRetreat, setMaxRetreat] = useState('any');
+  const [noEx, setNoEx] = useState(false);
+  const [noWeakness, setNoWeakness] = useState(false);
+  const [minDamage, setMinDamage] = useState('any');
+  const [selectedType, setSelectedType] = useState('any');
 
   React.useEffect(() => {
     const checkAuth = () => {
@@ -136,6 +146,14 @@ const GeneratorPage = () => {
     },
   });
 
+  const { data: decksData } = useQuery({
+    queryKey: ["decks-data"],
+    queryFn: async () => {
+      const response = await fetch("/data/best-decks.json");
+      return response.json();
+    }
+  });
+
   const handleExcludeCard = (cardId: string) => {
     const newExcluded = [...excludedCards, cardId];
     setExcludedCards(newExcluded);
@@ -151,29 +169,114 @@ const GeneratorPage = () => {
     setResult(null);
 
     try {
-      // Create a simplified card dataset to fit in prompt
+      // Find matching meta decks from tournament data
+      let matchedMetaDeck: any = null;
+      let metaDeckListFormatted = "";
+      if (decksData && Array.isArray(decksData)) {
+        const lowercasePrompt = prompt.toLowerCase();
+        
+        // Find if there's any card ID or card name matching words in the prompt
+        const matchingCardsFromPrompt = cards.filter(c => 
+          lowercasePrompt.includes(c.name.toLowerCase())
+        );
+        const matchingCardIds = matchingCardsFromPrompt.map(c => c.id);
+
+        let bestScore = -1;
+        
+        for (const deck of decksData) {
+          let matchScore = 0;
+          const deckNameLower = deck.name.toLowerCase();
+          
+          // 1. Match prompt words against deck name
+          const promptWords = lowercasePrompt.split(/[\s,&+._\-]+/);
+          for (const word of promptWords) {
+            if (word.length > 2 && deckNameLower.includes(word)) {
+              matchScore += 12;
+            }
+          }
+
+          // 2. Check if the deck contains cards mentioned in the prompt
+          if (deck.lists && deck.lists.length > 0) {
+            const firstList = deck.lists[0];
+            for (const cardStr of firstList.cards) {
+              const id = cardStr.split(":")[1];
+              if (matchingCardIds.includes(id)) {
+                matchScore += 18;
+              }
+            }
+          }
+
+          if (matchScore > bestScore && matchScore > 0) {
+            bestScore = matchScore;
+            matchedMetaDeck = deck;
+          }
+        }
+
+        if (matchedMetaDeck && matchedMetaDeck.lists && matchedMetaDeck.lists.length > 0) {
+          const bestList = matchedMetaDeck.lists[0];
+          const parsedMetaCards = bestList.cards.map((cStr: string) => {
+            const parts = cStr.split(":");
+            const count = parseInt(parts[0]);
+            const id = parts[1];
+            const cardObj = cards.find(c => c.id === id);
+            return {
+              id,
+              count,
+              name: cardObj ? cardObj.name : "Unknown",
+              type: cardObj ? cardObj.type : "Unknown",
+              hp: cardObj ? cardObj.health : null,
+              stage: cardObj ? cardObj.stage : null,
+              ex: cardObj ? cardObj.ex : null
+            };
+          });
+          metaDeckListFormatted = JSON.stringify(parsedMetaCards, null, 2);
+        }
+      }
+
+      // Create a simplified card dataset to fit in prompt with full metadata
       const simplifiedCards = cards.map(c => ({
         id: c.id,
         name: c.name,
         type: c.type,
         hp: c.health,
+        stage: c.stage,
+        ex: c.ex,
+        set: c.set,
         pack: c.pack,
         rarity: c.rarity
       }));
 
+      const activeFilters: string[] = [];
+      if (maxEnergy !== 'any') activeFilters.push(`MAXIMUM attack energy cost requirement for any Pokemon in the deck: ${maxEnergy} energy`);
+      if (minHP !== 'any') activeFilters.push(`MINIMUM HP for any Pokemon in the deck: ${minHP} HP (excluding evolving Basics that are required for Stage 1/2 evolution chains)`);
+      if (maxRetreat !== 'any') activeFilters.push(`MAXIMUM Retreat Cost for any Pokemon in the deck: ${maxRetreat}`);
+      if (noEx) activeFilters.push(`No "ex" cards allowed in the deck under any condition!`);
+      if (noWeakness) activeFilters.push(`Pokemon cards in the deck MUST have No Weakness (i.e., blank/empty weakness field, or immune/resistant)`);
+      if (minDamage !== 'any') activeFilters.push(`The primary attacker's main attack MUST deal at least ${minDamage} damage`);
+      if (selectedType !== 'any') activeFilters.push(`The deck's Pokemon cards MUST be primarily of type: ${selectedType}`);
+
+      const filtersPromptSegment = activeFilters.length > 0 
+        ? `\nCRITICAL ENFORCED ADVANCED SEARCH FILTERS (You must strictly adhere to these filters when selecting cards for the deck. Do not violate any of these filters!):\n${activeFilters.map(f => `- ${f}`).join('\n')}\n`
+        : '';
+
       const systemPrompt = `You are an absolute expert Pokemon TCG Pocket deck generator, competitive data analyst, and tournament master.
 The user wants a deck based on: "${prompt}".
+${filtersPromptSegment}
+
+CRITICAL TOURNAMENT META REFERENCE:
+${metaDeckListFormatted ? `We found an exact or highly relevant top-performing tournament deck list matching the prompt in our database:
+${metaDeckListFormatted}
+You MUST prioritize utilizing this tournament-winning deck layout as your direct baseline! If the user's prompt has custom rules (like "no ex" or "min 130 HP"), adjust this list smartly by replacing the non-essential cards with optimal ones from the Available Cards List below. If the prompt does not have custom constraints, try to match this high-level tournament list exactly!` : `No exact tournament deck found. Create the absolute best, most competitive meta-proven deck layout possible using the cards available.`}
 
 CRITICAL CARD KNOWLEDGE & ACCURACY INSTRUCTIONS:
 - You have access to your complete, accurate internal database containing all the real rules, texts, exact attacks, stages, HP, abilities, and effects of Pokemon TCG Pocket cards. You MUST NOT hallucinate or mix up any card details.
-- Every card in the "cards" list you return must have accurate details explaining its actual mechanical purpose, stage, and role in Pokemon TCG Pocket. For example:
+- Every card in the "cards" list you return must have highly detailed explanations inside "details" describing its actual mechanical purpose, stage, and role in Pokemon TCG Pocket. For example:
   * Dratini is a Basic Pokemon (NOT Stage 1), and belongs to the Dragonite evolution line (Dratini -> Dragonair -> Dragonite).
   * Axew is a Basic Pokemon, Fraxure is Stage 1, and Haxorus is Stage 2. (Axew -> Fraxure -> Haxorus).
   * Munchlax is a Colorless Basic Pokemon with 50 HP and its own unique Pokepower/ability in TCG Pocket.
   * Misty is a Supporter card that flips coins to attach Water Energy to Water Pokemon, and Sabrina is a Supporter card that forces the opponent to switch their Active Pokemon.
   * Poke Ball is a Trainer card that searches for a Basic Pokemon.
   * Rare Candy is a Trainer card that allows you to evolve a Basic Pokemon directly to a Stage 2 Pokemon, which is a key speed engine for any Stage 2 deck.
-- Always write precise, correct statements in the card "details" fields.
 
 CRITICAL EVOLUTIONARY LINE INTEGRITY RULES:
 - You must always respect proper, exact evolutionary chains as they exist in the Pokemon franchise.
@@ -189,6 +292,19 @@ CRITICAL EVOLUTIONARY LINE INTEGRITY RULES:
   * Pidgey (Basic) -> Pidgeotto (Stage 1) -> Pidgeot (Stage 2).
 - If you include a Stage 2 Pokemon, you do not always need a full equal evolution line (like 2-2-2) if you run Rare Candy. A competitive meta ratio for a Stage 2 deck running Rare Candy is: 2 Basics, 1 Stage 1, and 2 Stage 2s (with 2 Rare Candies), or direct skip lines like 2 Basics and 2 Stage 2s (with 2 Rare Candies). Always make sure you include the proper Basic (and optional Stage 1 if utilizing Rare Candy) pre-evolution belonging to the same exact evolution family. Mismatching family lines (e.g. Dratini and Haxorus) is a critical failure. If a Stage 2 Pokemon is featured, ensure you also include 2 copies of "Rare Candy" to enable these accelerated transitions!
 - Ensure all Pokemon of an evolution line are accurately selected from the Available Cards List.
+
+CRITICAL CARD DETAIL REQUIREMENTS:
+For EACH card in your returned JSON list, you MUST provide an extremely comprehensive, exact, and detailed explanation in the "details" field.
+This explanation MUST include:
+1. The EXACT name of the card's primary Attack(s) and/or Poke-Power/Abilities as they exist in Pokemon TCG Pocket (NOT standard TCG, specifically TCG Pocket!).
+2. The exact Energy requirements and exact damage output (e.g., "Psydrive: 150 damage for 2 Psychic and 1 Colorless energy").
+3. The exact gameplay mechanics, synergy, or effect of the attack/ability (e.g., "Gardevoir's 'Psy Shadow' Poke-Power allows you to attach a Psychic energy from your discard pile to your active Psychic Pokemon once per turn").
+4. How this card's specific attack/ability synergizes perfectly with the rest of the deck and tournament-level meta strategies.
+
+Example details format:
+- "Stage 2 • 150 HP • Poke-Power: 'Psy Shadow' attaches 1 benched Psychic Energy per turn. Essential energy acceleration for Mewtwo ex's 'Psydrive' attack."
+- "Basic ex • 190 HP • Attack: 'Psydrive' deals 150 damage for [P][P][C], discarding 2 energy. Paired with Gardevoir for rapid recharge."
+- "Trainer Supporter • Misty: Flip coins until you get tails. For each heads, attach 1 Water Energy to 1 of your Active or Benched Water Pokemon. High-roll energy acceleration for Articuno ex."
 
 CRITICAL DUPLICATE CARD NAME RULES:
 - Under NO circumstance should a card name appear more than twice (2 copies max) in the deck, even if they have different card IDs, different sets, or different art styles (e.g. you cannot have 2 copies of Poké Ball from set A and 1 copy of Poké Ball from set B. The absolute maximum total count of cards named "Poké Ball" in the deck is 2).
@@ -218,7 +334,7 @@ Return ONLY a valid JSON object in this exact format:
   "deckName": "Name of the Deck",
   "description": "Short explanation of how the deck works and why these cards were chosen, mentioning how they fit the advanced search criteria and competitive tournament data.",
   "cards": [
-    { "id": "card-id", "count": 2, "details": "Stage 2 • 150 HP • Explain why this card is perfect here..." },
+    { "id": "card-id", "count": 2, "details": "The complete attack/ability details (including exact name, energy cost, damage, effects, and tournament synergy)" },
     ...
   ]
 }
@@ -412,6 +528,235 @@ A valid Pokemon TCG Pocket deck MUST have exactly 20 cards. CRITICAL RULE: A dec
               onChange={e => setPrompt(e.target.value)}
               disabled={loading}
             />
+
+            {/* Advanced Search Filters Toggle & Reset */}
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '0.5rem', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.75rem' }}>
+              <button
+                type="button"
+                onClick={() => setShowFilters(!showFilters)}
+                style={{
+                  background: 'transparent',
+                  border: 'none',
+                  color: 'var(--primary)',
+                  cursor: 'pointer',
+                  fontSize: '0.95rem',
+                  fontWeight: 600,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.35rem',
+                  padding: '0.25rem 0',
+                  transition: 'opacity 0.2s',
+                }}
+              >
+                <span>{showFilters ? '▲ Hide Advanced Search Filters' : '▼ Show Advanced Search Filters'}</span>
+                {(maxEnergy !== 'any' || minHP !== 'any' || maxRetreat !== 'any' || noEx || noWeakness || minDamage !== 'any' || selectedType !== 'any') && (
+                  <span style={{ fontSize: '0.75rem', background: 'var(--primary)', color: 'white', padding: '0.15rem 0.4rem', borderRadius: '10px', marginLeft: '0.25rem' }}>Active</span>
+                )}
+              </button>
+              {(maxEnergy !== 'any' || minHP !== 'any' || maxRetreat !== 'any' || noEx || noWeakness || minDamage !== 'any' || selectedType !== 'any') && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMaxEnergy('any');
+                    setMinHP('any');
+                    setMaxRetreat('any');
+                    setNoEx(false);
+                    setNoWeakness(false);
+                    setMinDamage('any');
+                    setSelectedType('any');
+                  }}
+                  style={{
+                    background: 'transparent',
+                    border: 'none',
+                    color: 'var(--text-secondary)',
+                    cursor: 'pointer',
+                    fontSize: '0.85rem',
+                    textDecoration: 'underline',
+                    padding: '0.25rem 0'
+                  }}
+                >
+                  Reset Filters
+                </button>
+              )}
+            </div>
+
+            {/* Advanced Search Filters Panel */}
+            {showFilters && (
+              <div style={{
+                background: 'var(--bg-secondary)',
+                border: '1px solid var(--border)',
+                borderRadius: '8px',
+                padding: '1.25rem',
+                marginBottom: '1.5rem',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1rem',
+                boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.02)'
+              }}>
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+                  gap: '1rem'
+                }}>
+                  {/* Pokemon Type */}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+                    <label style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-secondary)' }}>Primary Type</label>
+                    <select
+                      value={selectedType}
+                      onChange={e => setSelectedType(e.target.value)}
+                      style={{
+                        padding: '0.5rem',
+                        borderRadius: '6px',
+                        border: '1px solid var(--border)',
+                        background: 'var(--bg)',
+                        color: 'var(--text)',
+                        fontSize: '0.9rem',
+                        outline: 'none',
+                        cursor: 'pointer'
+                      }}
+                    >
+                      <option value="any">Any / Multicolored</option>
+                      <option value="Grass">Grass</option>
+                      <option value="Fire">Fire</option>
+                      <option value="Water">Water</option>
+                      <option value="Lightning">Lightning</option>
+                      <option value="Psychic">Psychic</option>
+                      <option value="Fighting">Fighting</option>
+                      <option value="Darkness">Darkness</option>
+                      <option value="Metal">Metal</option>
+                      <option value="Dragon">Dragon</option>
+                      <option value="Colorless">Colorless</option>
+                    </select>
+                  </div>
+
+                  {/* Max Attack Energy Requirement */}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+                    <label style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-secondary)' }}>Max Attack Energy</label>
+                    <select
+                      value={maxEnergy}
+                      onChange={e => setMaxEnergy(e.target.value)}
+                      style={{
+                        padding: '0.5rem',
+                        borderRadius: '6px',
+                        border: '1px solid var(--border)',
+                        background: 'var(--bg)',
+                        color: 'var(--text)',
+                        fontSize: '0.9rem',
+                        outline: 'none',
+                        cursor: 'pointer'
+                      }}
+                    >
+                      <option value="any">Any Energy Cost</option>
+                      <option value="1">Max 1 Energy</option>
+                      <option value="2">Max 2 Energy</option>
+                      <option value="3">Max 3 Energy</option>
+                      <option value="4">Max 4 Energy</option>
+                    </select>
+                  </div>
+
+                  {/* Min HP */}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+                    <label style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-secondary)' }}>Minimum HP</label>
+                    <select
+                      value={minHP}
+                      onChange={e => setMinHP(e.target.value)}
+                      style={{
+                        padding: '0.5rem',
+                        borderRadius: '6px',
+                        border: '1px solid var(--border)',
+                        background: 'var(--bg)',
+                        color: 'var(--text)',
+                        fontSize: '0.9rem',
+                        outline: 'none',
+                        cursor: 'pointer'
+                      }}
+                    >
+                      <option value="any">Any HP</option>
+                      <option value="50">50+ HP</option>
+                      <option value="70">70+ HP</option>
+                      <option value="90">90+ HP</option>
+                      <option value="110">110+ HP</option>
+                      <option value="130">130+ HP</option>
+                      <option value="150">150+ HP</option>
+                    </select>
+                  </div>
+
+                  {/* Max Retreat Cost */}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+                    <label style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-secondary)' }}>Max Retreat Cost</label>
+                    <select
+                      value={maxRetreat}
+                      onChange={e => setMaxRetreat(e.target.value)}
+                      style={{
+                        padding: '0.5rem',
+                        borderRadius: '6px',
+                        border: '1px solid var(--border)',
+                        background: 'var(--bg)',
+                        color: 'var(--text)',
+                        fontSize: '0.9rem',
+                        outline: 'none',
+                        cursor: 'pointer'
+                      }}
+                    >
+                      <option value="any">Any Retreat Cost</option>
+                      <option value="0">0 Energy (Free retreat)</option>
+                      <option value="1">1 Energy or less</option>
+                      <option value="2">2 Energy or less</option>
+                      <option value="3">3 Energy or less</option>
+                    </select>
+                  </div>
+
+                  {/* Min Attack Damage */}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+                    <label style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-secondary)' }}>Min Attack Damage</label>
+                    <select
+                      value={minDamage}
+                      onChange={e => setMinDamage(e.target.value)}
+                      style={{
+                        padding: '0.5rem',
+                        borderRadius: '6px',
+                        border: '1px solid var(--border)',
+                        background: 'var(--bg)',
+                        color: 'var(--text)',
+                        fontSize: '0.9rem',
+                        outline: 'none',
+                        cursor: 'pointer'
+                      }}
+                    >
+                      <option value="any">Any Damage</option>
+                      <option value="30">30+ Damage</option>
+                      <option value="50">50+ Damage</option>
+                      <option value="80">80+ Damage</option>
+                      <option value="100">100+ Damage</option>
+                      <option value="125">125+ Damage</option>
+                      <option value="150">150+ Damage</option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* Checkboxes Row */}
+                <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', marginTop: '0.5rem', borderTop: '1px solid var(--border)', paddingTop: '0.75rem' }}>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', cursor: 'pointer', color: 'var(--text)' }}>
+                    <input
+                      type="checkbox"
+                      checked={noEx}
+                      onChange={e => setNoEx(e.target.checked)}
+                      style={{ width: '15px', height: '15px', cursor: 'pointer' }}
+                    />
+                    <span>Exclude "ex" Cards (No ex Rule)</span>
+                  </label>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', cursor: 'pointer', color: 'var(--text)' }}>
+                    <input
+                      type="checkbox"
+                      checked={noWeakness}
+                      onChange={e => setNoWeakness(e.target.checked)}
+                      style={{ width: '15px', height: '15px', cursor: 'pointer' }}
+                    />
+                    <span>Strictly No Weakness</span>
+                  </label>
+                </div>
+              </div>
+            )}
             
             <Button onClick={() => generateDeck()} disabled={loading || !prompt.trim() || !cards}>
               {loading ? 'Generating...' : 'Generate Deck'}
@@ -467,7 +812,7 @@ A valid Pokemon TCG Pocket deck MUST have exactly 20 cards. CRITICAL RULE: A dec
                        {cardData.type} • {cardData.health ? `${cardData.health} HP` : 'Trainer'}
                      </div>
                      {item.details && (
-                       <div style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', marginTop: '0.4rem', fontStyle: 'italic', maxWidth: '140px' }}>
+                       <div style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', marginTop: '0.4rem', fontStyle: 'italic', width: '100%', lineHeight: '1.4' }}>
                          {item.details}
                        </div>
                      )}
