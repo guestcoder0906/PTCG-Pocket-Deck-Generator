@@ -293,6 +293,14 @@ CRITICAL EVOLUTIONARY LINE INTEGRITY RULES:
 - If you include a Stage 2 Pokemon, you do not always need a full equal evolution line (like 2-2-2) if you run Rare Candy. A competitive meta ratio for a Stage 2 deck running Rare Candy is: 2 Basics, 1 Stage 1, and 2 Stage 2s (with 2 Rare Candies), or direct skip lines like 2 Basics and 2 Stage 2s (with 2 Rare Candies). Always make sure you include the proper Basic (and optional Stage 1 if utilizing Rare Candy) pre-evolution belonging to the same exact evolution family. Mismatching family lines (e.g. Dratini and Haxorus) is a critical failure. If a Stage 2 Pokemon is featured, ensure you also include 2 copies of "Rare Candy" to enable these accelerated transitions!
 - Ensure all Pokemon of an evolution line are accurately selected from the Available Cards List.
 
+CRITICAL ENERGY AND TYPE CONSISTENCY RULES:
+- You MUST ensure the deck has strict energy type alignment and compatibility. In Pokemon TCG Pocket, decks do not typically run more than 1 or 2 different energy types.
+- Under NO circumstance should you throw in a lone Pokemon of a different type that requires its own distinct energy type to attack (e.g., adding a single Water Pokemon requiring Water Energy in a deck full of Psychic Pokemon requiring Psychic Energy), unless:
+  1. It is a Colorless Pokemon (which can use any energy type for its attacks).
+  2. Its role is purely non-attacking and its Poke-Power/Ability is useful and does not require active energy attachment of its own type (and even then, only if highly viable).
+  3. The deck is a proven multi-energy archetype that uses a specific energy accelerator or shared trainer cards (e.g., Misty + Articuno in a Water-Psychic deck, or Dragon types which naturally require dual energy types).
+- Always verify that the energy required for every Pokemon's attacks matches the energy type(s) that the deck will generate. A deck with incompatible energy types (e.g. running Venusaur and Charizard together without any shared energy or logical engine) is a critical failure.
+
 CRITICAL CARD DETAIL REQUIREMENTS:
 For EACH card in your returned JSON list, you MUST provide an extremely comprehensive, exact, and detailed explanation in the "details" field.
 This explanation MUST include:
