@@ -131,9 +131,11 @@ const GeneratorPage = () => {
       const systemPrompt = `You are an absolute expert Pokemon TCG Pocket deck generator, competitive data analyst, and tournament master.
 The user wants a deck based on: "${prompt}".
 
-You have extensive internal knowledge of Pokemon TCG Pocket, including ALL tournament data, the absolute best decks from all databases, tier lists, and intricate details of every card (such as retreat cost, weaknesses, attacks, base damage, conditional damage multipliers, abilities, and HP).
-You MUST use your knowledge of tournament data, best cards, and best decks to generate the absolute best deck possible. 
-For example, you know that "Hand Scope" is usually a complete waste of deck space in competitive play based on tournament data, so you won't include it unless it's a very specific meme deck request. You will include staples like Professor's Research, Poke Ball, X Speed where optimal.
+CRITICAL INSTRUCTION: Before choosing cards, dynamically search and cross-reference your extensive internal knowledge of ALL Pokemon TCG Pocket cards, tournament data, tier lists, and meta databases.
+You MUST analyze the specific mechanics, synergies, and win-conditions of the deck being requested. Do NOT rely on static, generic staples for every deck.
+- Deep Meta Analysis: Automatically filter out cards that are statistically unviable or a waste of deck space in competitive play, unless the user explicitly asks for them. 
+- Synergistic Adaptability: Every single trainer, supporter, and item chosen must make logical sense for the specific Pokemon lineup you've selected. For example, dynamically search for the most optimal acceleration, search, and support cards tailored exactly for the specific Pokemon stages, energy types, and mechanics in the deck.
+- Flexible Optimization: You must anticipate interactions and be extremely smart in your card selection. Adapt dynamically to the user's prompt to find the absolute best 20-card combination possible based on advanced meta intelligence.
 
 You must be able to perform advanced searches dynamically, accurately, and specifically based on the user's prompt. For example:
 - If they ask for "min hp", filter cards based on that HP threshold.
@@ -154,11 +156,11 @@ Return ONLY a valid JSON object in this exact format:
   "deckName": "Name of the Deck",
   "description": "Short explanation of how the deck works and why these cards were chosen, mentioning how they fit the advanced search criteria and competitive tournament data.",
   "cards": [
-    { "id": "card-id", "count": 2 },
+    { "id": "card-id", "count": 2, "details": "Stage 2 • 150 HP • Explain why this card is perfect here..." },
     ...
   ]
 }
-A valid Pokemon TCG Pocket deck MUST have exactly 20 cards. CRITICAL RULE: A deck MUST NOT contain more than 2 copies of any card with the same name. You must set the "count" field to 1 or 2. Never 3 or more. Return an array of exactly 20 cards by sum of counts. Do not use Markdown formatting in the output, just raw JSON.`;
+A valid Pokemon TCG Pocket deck MUST have exactly 20 cards. CRITICAL RULE: A deck MUST NOT contain more than 2 copies of any card with the same name, even if they have different IDs (e.g. you cannot have 2 Pikachu from pack A and 1 Pikachu from pack B, the max total is 2 "Pikachu"). You must set the "count" field to 1 or 2. Never 3 or more. Return an array of exactly 20 cards by sum of counts. Do not use Markdown formatting in the output, just raw JSON.`;
 
       const response = await window.puter.ai.chat(systemPrompt, { model: 'gemini-3.1-flash-lite' });
       
@@ -229,7 +231,7 @@ A valid Pokemon TCG Pocket deck MUST have exactly 20 cards. CRITICAL RULE: A dec
           <h2 style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>{result.deckName}</h2>
           <p style={{ marginBottom: '1.5rem', lineHeight: 1.5 }}>{result.description}</p>
           
-          <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem' }}>Deck List (20 cards)</h3>
+          <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem' }}>Deck List ({result.cards.reduce((sum: number, c: any) => sum + (c.count || 0), 0)} cards)</h3>
           <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
             Click on a card you don't have to replace it with the next best alternative.
           </p>
@@ -245,11 +247,16 @@ A valid Pokemon TCG Pocket deck MUST have exactly 20 cards. CRITICAL RULE: A dec
                    </div>
                    <div style={{ marginTop: '0.5rem', fontSize: '0.8rem', fontWeight: 500, textAlign: 'center' }}>
                      {cardData.name}
-                     <div style={{ fontSize: '0.7rem', color: 'var(--text-secondary)' }}>
+                     <div style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', marginTop: '0.2rem' }}>
                        {cardData.pack} • {cardData.rarity}
                        <br />
                        {cardData.type} • {cardData.health ? `${cardData.health} HP` : 'Trainer'}
                      </div>
+                     {item.details && (
+                       <div style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', marginTop: '0.4rem', fontStyle: 'italic', maxWidth: '140px' }}>
+                         {item.details}
+                       </div>
+                     )}
                    </div>
                 </div>
               );
