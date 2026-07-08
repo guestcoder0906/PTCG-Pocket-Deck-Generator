@@ -1,0 +1,456 @@
+{
+  "Lt. Surge": {
+    "name": "Lt. Surge",
+    "type": "Trainer",
+    "subtype": "Supporter",
+    "health": null,
+    "ability": null,
+    "attacks": [],
+    "rulesOrEffectText": "Move all Lightning Energy from your Benched Voltorb, Electrode, Pikachu, Pikachu ex, Magnemite, or Magneton to your Active Pikachu or Pikachu ex."
+  },
+  "Lisia": {
+    "name": "Lisia",
+    "type": "Trainer",
+    "subtype": "Supporter",
+    "health": null,
+    "ability": null,
+    "attacks": [],
+    "rulesOrEffectText": "Search your deck for up to 2 Basic Lightning-type Pokémon with 50 HP or less, reveal them, and put them into your hand. Then, shuffle your deck."
+  },
+  "Poké Ball": {
+    "name": "Poké Ball",
+    "type": "Trainer",
+    "subtype": "Item",
+    "health": null,
+    "ability": null,
+    "attacks": [],
+    "rulesOrEffectText": "Search your deck for a Basic Pokémon, reveal it, and put it into your hand. Then, shuffle your deck."
+  },
+  "Professor's Research": {
+    "name": "Professor's Research",
+    "type": "Trainer",
+    "subtype": "Supporter",
+    "health": null,
+    "ability": null,
+    "attacks": [],
+    "rulesOrEffectText": "Draw 2 cards."
+  },
+  "Misty": {
+    "name": "Misty",
+    "type": "Trainer",
+    "subtype": "Supporter",
+    "health": null,
+    "ability": null,
+    "attacks": [],
+    "rulesOrEffectText": "Choose 1 of your Benched or Active Water Pokémon. Flip a coin until you get tails. For each heads, attach 1 Water Energy from your Energy Zone to that Pokémon."
+  },
+  "Sabrina": {
+    "name": "Sabrina",
+    "type": "Trainer",
+    "subtype": "Supporter",
+    "health": null,
+    "ability": null,
+    "attacks": [],
+    "rulesOrEffectText": "Your opponent switches their Active Pokémon with 1 of their Benched Pokémon."
+  },
+  "Giovanni": {
+    "name": "Giovanni",
+    "type": "Trainer",
+    "subtype": "Supporter",
+    "health": null,
+    "ability": null,
+    "attacks": [],
+    "rulesOrEffectText": "During this turn, your Pokémon's attacks deal +10 damage to your opponent's Active Pokémon."
+  },
+  "Red Card": {
+    "name": "Red Card",
+    "type": "Trainer",
+    "subtype": "Item",
+    "health": null,
+    "ability": null,
+    "attacks": [],
+    "rulesOrEffectText": "Your opponent shuffles their hand into their deck and draws 3 cards."
+  },
+  "X Speed": {
+    "name": "X Speed",
+    "type": "Trainer",
+    "subtype": "Item",
+    "health": null,
+    "ability": null,
+    "attacks": [],
+    "rulesOrEffectText": "During this turn, the Retreat Cost of your Active Pokémon is [C] less."
+  },
+  "Hand Scope": {
+    "name": "Hand Scope",
+    "type": "Trainer",
+    "subtype": "Item",
+    "health": null,
+    "ability": null,
+    "attacks": [],
+    "rulesOrEffectText": "Look at your opponent's hand."
+  },
+  "Rare Candy": {
+    "name": "Rare Candy",
+    "type": "Trainer",
+    "subtype": "Item",
+    "health": null,
+    "ability": null,
+    "attacks": [],
+    "rulesOrEffectText": "Choose 1 of your Basic Pokémon in play. If you have a Stage 2 Pokémon in your hand that evolves from that Pokémon, evolve it directly into that Stage 2 Pokémon (skipping the Stage 1 evolution)."
+  },
+  "Potion": {
+    "name": "Potion",
+    "type": "Trainer",
+    "subtype": "Item",
+    "health": null,
+    "ability": null,
+    "attacks": [],
+    "rulesOrEffectText": "Heal 20 damage from 1 of your Pokémon."
+  },
+  "Erika": {
+    "name": "Erika",
+    "type": "Trainer",
+    "subtype": "Supporter",
+    "health": null,
+    "ability": null,
+    "attacks": [],
+    "rulesOrEffectText": "Heal 50 damage from 1 of your Grass Pokémon."
+  },
+  "Blaine": {
+    "name": "Blaine",
+    "type": "Trainer",
+    "subtype": "Supporter",
+    "health": null,
+    "ability": null,
+    "attacks": [],
+    "rulesOrEffectText": "During this turn, attacks from your Ninetales, Rapidash, or Magmar deal +30 damage to your opponent's Active Pokémon."
+  },
+  "Koga": {
+    "name": "Koga",
+    "type": "Trainer",
+    "subtype": "Supporter",
+    "health": null,
+    "ability": null,
+    "attacks": [],
+    "rulesOrEffectText": "Put an Active Arbok or Weezing you have in play into your hand (all attached cards are returned to your hand)."
+  },
+  "Brock": {
+    "name": "Brock",
+    "type": "Trainer",
+    "subtype": "Supporter",
+    "health": null,
+    "ability": null,
+    "attacks": [],
+    "rulesOrEffectText": "Attach 1 Fighting Energy from your Energy Zone to 1 of your Benched Onix or Golem."
+  },
+  "Fossil Excavator": {
+    "name": "Fossil Excavator",
+    "type": "Trainer",
+    "subtype": "Supporter",
+    "health": null,
+    "ability": null,
+    "attacks": [],
+    "rulesOrEffectText": "Search your deck for up to 2 cards that have Fossil in their name (Helix Fossil, Dome Fossil, Old Amber), reveal them, and put them into your hand. Then, shuffle your deck."
+  },
+  "Helix Fossil": {
+    "name": "Helix Fossil",
+    "type": "Trainer",
+    "subtype": "Item",
+    "health": "40",
+    "ability": null,
+    "attacks": [],
+    "rulesOrEffectText": "Play this card as if it were a Basic Pokémon (Colorless type). It has 40 HP and cannot attack or retreat."
+  },
+  "Dome Fossil": {
+    "name": "Dome Fossil",
+    "type": "Trainer",
+    "subtype": "Item",
+    "health": "40",
+    "ability": null,
+    "attacks": [],
+    "rulesOrEffectText": "Play this card as if it were a Basic Pokémon (Colorless type). It has 40 HP and cannot attack or retreat."
+  },
+  "Old Amber": {
+    "name": "Old Amber",
+    "type": "Trainer",
+    "subtype": "Item",
+    "health": "40",
+    "ability": null,
+    "attacks": [],
+    "rulesOrEffectText": "Play this card as if it were a Basic Pokémon (Colorless type). It has 40 HP and cannot attack or retreat."
+  },
+  "Kanto Friends": {
+    "name": "Kanto Friends",
+    "type": "Trainer",
+    "subtype": "Supporter",
+    "health": null,
+    "ability": null,
+    "attacks": [],
+    "rulesOrEffectText": "Search your deck for a Bulbasaur, Charmander, or Squirtle, reveal it, and put it into your hand. Then, shuffle your deck."
+  },
+  "Ivysaur": {
+    "name": "Ivysaur",
+    "type": "Grass",
+    "subtype": "Stage 1",
+    "health": "90",
+    "ability": null,
+    "attacks": [
+      {
+        "name": "Razor Leaf",
+        "cost": "[G][C][C]",
+        "damage": "60",
+        "effect": null
+      }
+    ],
+    "rulesOrEffectText": "NO. 002 Seed Pokémon HT: 3'3\" WT: 28.7 lbs.\nWhen the bulb on its back grows large, it appears to lose the ability to stand on its hind legs."
+  },
+  "Venusaur ex ex": {
+    "name": "Venusaur ex",
+    "type": "Grass",
+    "subtype": null,
+    "health": "190",
+    "ability": null,
+    "attacks": [
+      {
+        "name": "Razor Leaf",
+        "cost": "[G][G][C]",
+        "damage": "60",
+        "effect": null
+      },
+      {
+        "name": "Giant Bloom",
+        "cost": "[G][G][C][C]",
+        "damage": "100",
+        "effect": "Heal 30 damage from this Pokémon."
+      }
+    ],
+    "rulesOrEffectText": "ex rule: When your Pokémon ex is Knocked Out, your opponent gets 2 Prize cards."
+  },
+  "Caterpie": {
+    "name": "Caterpie",
+    "type": "Grass",
+    "subtype": null,
+    "health": "50",
+    "ability": null,
+    "attacks": [
+      {
+        "name": "Find a Friend",
+        "cost": "[C]",
+        "damage": null,
+        "effect": "Put 1 random Grass Pokémon from your deck into your hand."
+      }
+    ],
+    "rulesOrEffectText": "For protection, it releases a horrible stench from the antenna on its head to drive away enemies."
+  },
+  "Venusaur": {
+    "name": "Venusaur",
+    "type": "Grass",
+    "subtype": null,
+    "health": "160",
+    "ability": null,
+    "attacks": [
+      {
+        "name": "Mega Drain",
+        "cost": "[G][G][C][C]",
+        "damage": "80",
+        "effect": "Heal 30 damage from this Pokémon."
+      }
+    ],
+    "rulesOrEffectText": ""
+  },
+  "Bulbasaur": {
+    "name": "Bulbasaur",
+    "type": "Pokemon",
+    "subtype": "Basic",
+    "health": "70",
+    "ability": null,
+    "attacks": [
+      {
+        "name": "Vine Whip",
+        "cost": "[G][C]",
+        "damage": "40",
+        "effect": null
+      }
+    ],
+    "rulesOrEffectText": ""
+  },
+  "Kakuna": {
+    "name": "Kakuna",
+    "type": "Grass",
+    "subtype": null,
+    "health": "80",
+    "ability": null,
+    "attacks": [
+      {
+        "name": "Bug Bite",
+        "cost": "[G]",
+        "damage": "30",
+        "effect": ""
+      }
+    ],
+    "rulesOrEffectText": "Almost incapable of moving, this Pokémon can only harden its shell to protect itself when it is in danger."
+  },
+  "Metapod": {
+    "name": "Metapod",
+    "type": "Grass",
+    "subtype": null,
+    "health": "80",
+    "ability": null,
+    "attacks": [
+      {
+        "name": "Bug Bite",
+        "cost": "[C][C]",
+        "damage": "30",
+        "effect": null
+      }
+    ],
+    "rulesOrEffectText": ""
+  },
+  "Paras": {
+    "name": "Paras",
+    "type": "Grass",
+    "subtype": null,
+    "health": "70",
+    "ability": null,
+    "attacks": [
+      {
+        "name": "Scratch",
+        "cost": "[G][C]",
+        "damage": "30",
+        "effect": null
+      }
+    ],
+    "rulesOrEffectText": ""
+  },
+  "Bellsprout": {
+    "name": "Bellsprout",
+    "type": "Grass",
+    "subtype": null,
+    "health": "60",
+    "ability": null,
+    "attacks": [
+      {
+        "name": "Vine Whip",
+        "cost": "[G]",
+        "damage": "20",
+        "effect": null
+      }
+    ],
+    "rulesOrEffectText": ""
+  },
+  "Venomoth": {
+    "name": "Venomoth",
+    "type": "Grass",
+    "subtype": null,
+    "health": "80",
+    "ability": null,
+    "attacks": [
+      {
+        "name": "Poison Powder",
+        "cost": "[G]",
+        "damage": "30",
+        "effect": "Your opponent's Active Pokémon is now Poisoned."
+      }
+    ],
+    "rulesOrEffectText": "The wings are covered with dustlike scales. Every time it flaps its wings, it looses highly toxic dust."
+  },
+  "Victreebel": {
+    "name": "Victreebel",
+    "type": "Grass",
+    "subtype": null,
+    "health": "140",
+    "ability": {
+      "name": "Fragrance Trap",
+      "effect": "If this Pokémon is in the Active Spot, once during your turn, you may switch in 1 of your opponent's Benched Basic Pokémon to the Active Spot."
+    },
+    "attacks": [
+      {
+        "name": "Vine Whip",
+        "cost": "[G][C]",
+        "damage": "60",
+        "effect": null
+      }
+    ],
+    "rulesOrEffectText": ""
+  },
+  "Weepinbell": {
+    "name": "Weepinbell",
+    "type": "Grass",
+    "subtype": null,
+    "health": "90",
+    "ability": null,
+    "attacks": [
+      {
+        "name": "Razor Leaf",
+        "cost": "[G][C]",
+        "damage": "40",
+        "effect": null
+      }
+    ],
+    "rulesOrEffectText": "The leafy parts act as cutters for slashing foes. It spits a fluid that dissolves everything."
+  },
+  "Venonat": {
+    "name": "Venonat",
+    "type": "Grass",
+    "subtype": null,
+    "health": "60",
+    "ability": null,
+    "attacks": [
+      {
+        "name": "Tackle",
+        "cost": "[G]",
+        "damage": "20",
+        "effect": null
+      }
+    ],
+    "rulesOrEffectText": ""
+  },
+  "Tangela": {
+    "name": "Tangela",
+    "type": "Grass",
+    "subtype": null,
+    "health": "80",
+    "ability": null,
+    "attacks": [
+      {
+        "name": "Absorb",
+        "cost": "Grass, Colorless",
+        "damage": "40",
+        "effect": "Heal 10 damage from this Pokémon."
+      }
+    ],
+    "rulesOrEffectText": ""
+  },
+  "Exeggutor": {
+    "name": "Exeggutor",
+    "type": "Grass",
+    "subtype": null,
+    "health": "130",
+    "ability": null,
+    "attacks": [
+      {
+        "name": "Stomp",
+        "cost": "[G]",
+        "damage": "30+",
+        "effect": "Flip a coin. If heads, this attack does 30 more damage."
+      }
+    ],
+    "rulesOrEffectText": ""
+  },
+  "Petilil": {
+    "name": "Petilil",
+    "type": "Grass",
+    "subtype": null,
+    "health": "60",
+    "ability": null,
+    "attacks": [
+      {
+        "name": "Blot",
+        "cost": "[G]",
+        "damage": "10",
+        "effect": "Heal 10 damage from this Pokémon."
+      }
+    ],
+    "rulesOrEffectText": ""
+  }
+}

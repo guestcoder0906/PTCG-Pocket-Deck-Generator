@@ -138,10 +138,11 @@ const GeneratorPage = () => {
     }
   };
 
-  const { data: cards } = useQuery({
+  const { data: cards, isLoading: cardsLoading, error: cardsError } = useQuery({
     queryKey: ["cards"],
     queryFn: async () => {
       const response = await fetch(CARDS_URL);
+      if (!response.ok) throw new Error("Failed to fetch cards");
       return response.json() as Promise<CardType[]>;
     },
   });
@@ -233,18 +234,48 @@ const GeneratorPage = () => {
         }
       }
 
+      // Fetch local card details database containing OCR extracted rules and texts
+      let cardDetails: any = {};
+      try {
+        const detailsRes = await fetch("/data/card-details.json");
+        if (detailsRes.ok) {
+          cardDetails = await detailsRes.json();
+        }
+      } catch (err) {
+        console.warn("Failed to load local card-details.json", err);
+      }
+
       // Create a simplified card dataset to fit in prompt with full metadata
-      const simplifiedCards = cards.map(c => ({
-        id: c.id,
-        name: c.name,
-        type: c.type,
-        hp: c.health,
-        stage: c.stage,
-        ex: c.ex,
-        set: c.set,
-        pack: c.pack,
-        rarity: c.rarity
-      }));
+      const simplifiedCards = cards.map(c => {
+        const key = `${c.name}${c.ex === "Yes" ? " ex" : ""}`;
+        const detail = cardDetails[c.id] || cardDetails[key] || cardDetails[c.name] || null;
+        
+        let text = "";
+        if (detail) {
+          if (detail.rulesOrEffectText) {
+            text = detail.rulesOrEffectText;
+          } else {
+            const attacksText = Array.isArray(detail.attacks)
+              ? detail.attacks.map((a: any) => `${a.name}: ${a.damage ? a.damage + ' damage' : ''} (${a.effect || ''})`).join('; ')
+              : '';
+            const abilityText = detail.ability ? `Ability: ${detail.ability.name} (${detail.ability.effect})` : '';
+            text = [attacksText, abilityText].filter(Boolean).join('. ');
+          }
+        }
+
+        return {
+          id: c.id,
+          name: c.name,
+          type: c.type,
+          hp: c.health,
+          stage: c.stage,
+          ex: c.ex,
+          set: c.set,
+          pack: c.pack,
+          rarity: c.rarity,
+          text: text || undefined
+        };
+      });
 
       const activeFilters: string[] = [];
       if (maxEnergy !== 'any') activeFilters.push(`MAXIMUM attack energy cost requirement for any Pokemon in the deck: ${maxEnergy} energy`);
@@ -269,7 +300,8 @@ ${metaDeckListFormatted}
 You MUST prioritize utilizing this tournament-winning deck layout as your direct baseline! If the user's prompt has custom rules (like "no ex" or "min 130 HP"), adjust this list smartly by replacing the non-essential cards with optimal ones from the Available Cards List below. If the prompt does not have custom constraints, try to match this high-level tournament list exactly!` : `No exact tournament deck found. Create the absolute best, most competitive meta-proven deck layout possible using the cards available.`}
 
 CRITICAL CARD KNOWLEDGE & ACCURACY INSTRUCTIONS:
-- You have access to your complete, accurate internal database containing all the real rules, texts, exact attacks, stages, HP, abilities, and effects of Pokemon TCG Pocket cards. You MUST NOT hallucinate or mix up any card details.
+- You MUST prioritize using the exact text and effects provided in the "text" field of the cards inside the "Available Cards List" below. This represents real, verified, OCR-scanned rules from the game.
+- You MUST NOT hallucinate or guess any card details, effects, or abilities. If a card has an associated "text" property, that is its official active effect (for example, "Lt. Surge" moves energy from benched Pokemon of specific names to Pikachu/Pikachu ex, and "Lisia" searches for up to 2 Basic Lightning-type Pokémon with 50 HP or less). Use these precise rules in your deck composition, selection, and "details" descriptions!
 - Every card in the "cards" list you return must have highly detailed explanations inside "details" describing its actual mechanical purpose, stage, and role in Pokemon TCG Pocket. For example:
   * Dratini is a Basic Pokemon (NOT Stage 1), and belongs to the Dragonite evolution line (Dratini -> Dragonair -> Dragonite).
   * Axew is a Basic Pokemon, Fraxure is Stage 1, and Haxorus is Stage 2. (Axew -> Fraxure -> Haxorus).
@@ -766,7 +798,9 @@ A valid Pokemon TCG Pocket deck MUST have exactly 20 cards. CRITICAL RULE: A dec
               </div>
             )}
             
-            <Button onClick={() => generateDeck()} disabled={loading || !prompt.trim() || !cards}>
+            {cardsError && <div style={{ color: 'red', textAlign: 'center' }}>Error loading cards. Please refresh.</div>}
+            
+            <Button onClick={() => generateDeck()} disabled={loading || !prompt.trim() || cardsLoading || !!cardsError || !cards}>
               {loading ? 'Generating...' : 'Generate Deck'}
             </Button>
 
